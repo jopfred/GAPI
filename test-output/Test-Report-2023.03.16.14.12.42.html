@@ -1,0 +1,2220 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/191775216e8ce53c38791eb07a1d2f31d0ae11b5/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>GAPI project</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+			
+            
+                
+            
+        
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>API Functional Test Automation Report</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Mar 16, 2023 02:12:42 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box' style="max-height:94px;">
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='96.296%'><span class='strong'>26</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='3.704%'>1</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="timeline-chart" class="row nm-v nm-h">
+		<div class="col s12 m12 l12 np-h">
+			<div class="card-panel">
+				<div class='left panel-name'>Timeline (seconds)</div>
+				<div class="chart-box" style="width:98%;max-height:145px;">
+					<canvas id="timeline" height="120"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket details by filtering with  Site name</span>
+						<span class='test-time'>Mar 16, 2023 02:12:45 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:12:45 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:12:49 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+250ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:12:49 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?site=PHX015
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:12:49 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:12:49 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691525","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:59:17","updatedOn":"2023-03-16 13:59:17","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691524","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:58:44","updatedOn":"2023-03-16 13:58:44","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691523","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:57:59","updatedOn":"2023-03-16 13:57:59","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691522","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:51:34","updatedOn":"2023-03-16 13:51:34","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691521","title":"title sample1","status":"Completed","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:21:01","updatedOn":"2023-03-16 13:22:33","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691482","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:01:56","updatedOn":"2023-03-16 13:02:11","closedOn":"2023-03-16 13:02:12","createdBy":"dev146 tst146"},{"id":"WO8691457","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:41:00","updatedOn":"2023-03-16 12:42:42","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691456","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:37:25","updatedOn":"2023-03-16 12:37:25","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8690891","title":"title sample","status":"New","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:39:22","updatedOn":"2023-03-15 15:39:22","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685533","title":"title sample","status":"New","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 12:39:29","updatedOn":"2023-03-06 12:39:29","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685499","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:30:53","updatedOn":"2023-03-06 11:31:14","closedOn":"2023-03-06 11:31:14","createdBy":"dev146 tst146"},{"id":"WO8685497","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:29:17","updatedOn":"2023-03-06 11:30:04","closedOn":"2023-03-06 11:30:04","createdBy":"dev146 tst146"},{"id":"WO8684703","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:14:08","updatedOn":"2023-03-03 16:20:19","closedOn":"2023-03-03 16:20:19","createdBy":"dev146 tst146"},{"id":"WO8684702","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:09:48","updatedOn":"2023-03-03 16:13:10","closedOn":"2023-03-03 16:13:10","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 14,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 14,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:12:49 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket details by filtering with requestType=Amenities&category=Shipping / Receiving</span>
+						<span class='test-time'>Mar 16, 2023 02:12:49 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:12:49 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:12:54 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 5s+70ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:12:54 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?page=0&createdBy=DLR1 Super_Admin&status=Cancelled
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:12:54 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:12:54 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691441","title":"title sample1","status":"Cancelled","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:59:27","updatedOn":"2023-03-16 11:01:40","closedOn":"2023-03-16 11:01:40","createdBy":"DLR1 Super_Admin"},{"id":"WO8691437","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:40:59","updatedOn":"2023-03-16 10:41:02","closedOn":"2023-03-16 10:41:02","createdBy":"DLR1 Super_Admin"},{"id":"WO8691436","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:40:53","updatedOn":"2023-03-16 10:40:56","closedOn":"2023-03-16 10:40:56","createdBy":"DLR1 Super_Admin"},{"id":"WO8691435","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:40:47","updatedOn":"2023-03-16 10:40:50","closedOn":"2023-03-16 10:40:50","createdBy":"DLR1 Super_Admin"},{"id":"WO8691282","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 08:59:18","updatedOn":"2023-03-16 08:59:20","closedOn":"2023-03-16 08:59:20","createdBy":"DLR1 Super_Admin"},{"id":"WO8691281","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 08:59:12","updatedOn":"2023-03-16 08:59:14","closedOn":"2023-03-16 08:59:14","createdBy":"DLR1 Super_Admin"},{"id":"WO8691280","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 08:59:06","updatedOn":"2023-03-16 08:59:08","closedOn":"2023-03-16 08:59:08","createdBy":"DLR1 Super_Admin"},{"id":"WO8691003","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 16:32:43","updatedOn":"2023-03-15 16:32:46","closedOn":"2023-03-15 16:32:46","createdBy":"DLR1 Super_Admin"},{"id":"WO8691002","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 16:32:37","updatedOn":"2023-03-15 16:32:40","closedOn":"2023-03-15 16:32:40","createdBy":"DLR1 Super_Admin"},{"id":"WO8691001","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 16:32:31","updatedOn":"2023-03-15 16:32:33","closedOn":"2023-03-15 16:32:33","createdBy":"DLR1 Super_Admin"},{"id":"WO8690889","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:01:58","updatedOn":"2023-03-15 15:02:01","closedOn":"2023-03-15 15:02:01","createdBy":"DLR1 Super_Admin"},{"id":"WO8690888","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:01:52","updatedOn":"2023-03-15 15:01:55","closedOn":"2023-03-15 15:01:55","createdBy":"DLR1 Super_Admin"},{"id":"WO8690887","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:01:46","updatedOn":"2023-03-15 15:01:49","closedOn":"2023-03-15 15:01:49","createdBy":"DLR1 Super_Admin"},{"id":"WO8690644","title":"Welcome to title 1 .","status":"Cancelled","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 12:12:20","updatedOn":"2023-03-15 12:21:53","closedOn":"2023-03-15 12:21:53","createdBy":"DLR1 Super_Admin"},{"id":"WO8690607","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 10:26:10","updatedOn":"2023-03-15 10:26:14","closedOn":"2023-03-15 10:26:14","createdBy":"DLR1 Super_Admin"},{"id":"WO8690606","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 10:26:04","updatedOn":"2023-03-15 10:26:07","closedOn":"2023-03-15 10:26:07","createdBy":"DLR1 Super_Admin"},{"id":"WO8690605","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 10:25:58","updatedOn":"2023-03-15 10:26:01","closedOn":"2023-03-15 10:26:01","createdBy":"DLR1 Super_Admin"},{"id":"WO8690440","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 08:51:20","updatedOn":"2023-03-15 08:51:23","closedOn":"2023-03-15 08:51:23","createdBy":"DLR1 Super_Admin"},{"id":"WO8690439","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 08:51:15","updatedOn":"2023-03-15 08:51:17","closedOn":"2023-03-15 08:51:17","createdBy":"DLR1 Super_Admin"},{"id":"WO8690438","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 08:51:09","updatedOn":"2023-03-15 08:51:11","closedOn":"2023-03-15 08:51:11","createdBy":"DLR1 Super_Admin"},{"id":"WO8689993","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-14 13:14:26","updatedOn":"2023-03-14 13:14:28","closedOn":"2023-03-14 13:14:28","createdBy":"DLR1 Super_Admin"},{"id":"WO8689992","title":"title sample   ","status":"Cancelled","site":"ORD010","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-14 13:14:20","updatedOn":"2023-03-14 13:14:22","closedOn":"2023-03-14 13:14:22","createdBy":"DLR1 Super_Admin"},{"id":"WO8689991","title":"title sample   ","status":"Cancelled","site":"ORD010","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-14 13:14:14","updatedOn":"2023-03-14 13:14:16","closedOn":"2023-03-14 13:14:16","createdBy":"DLR1 Super_Admin"},{"id":"WO8689895","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-14 12:29:46","updatedOn":"2023-03-14 12:29:49","closedOn":"2023-03-14 12:29:49","createdBy":"DLR1 Super_Admin"},{"id":"WO8689894","title":"title sample   ","status":"Cancelled","site":"ORD010","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-14 12:29:40","updatedOn":"2023-03-14 12:29:43","closedOn":"2023-03-14 12:29:43","createdBy":"DLR1 Super_Admin"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 25,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 25,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:12:54 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket details by filtering with Status as New</span>
+						<span class='test-time'>Mar 16, 2023 02:12:54 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:12:54 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:12:58 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+655ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:12:58 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?status=New
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:12:58 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:12:58 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691525","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:59:17","updatedOn":"2023-03-16 13:59:17","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691524","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:58:44","updatedOn":"2023-03-16 13:58:44","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691523","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:57:59","updatedOn":"2023-03-16 13:57:59","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691522","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:51:34","updatedOn":"2023-03-16 13:51:34","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691456","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:37:25","updatedOn":"2023-03-16 12:37:25","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8690891","title":"title sample","status":"New","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:39:22","updatedOn":"2023-03-15 15:39:22","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685533","title":"title sample","status":"New","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 12:39:29","updatedOn":"2023-03-06 12:39:29","closedOn":"","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 7,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 7,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:12:58 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket details by filtering with Status as InProgress</span>
+						<span class='test-time'>Mar 16, 2023 02:12:58 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:12:58 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:02 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+59ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:02 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?status=In Progress
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:02 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:02 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691457","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:41:00","updatedOn":"2023-03-16 12:42:42","closedOn":"","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 1,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 1,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:02 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket details by filtering with Status as Completed</span>
+						<span class='test-time'>Mar 16, 2023 02:13:02 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:02 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:05 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+108ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:05 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?status=Completed
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:05 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:05 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691521","title":"title sample1","status":"Completed","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:21:01","updatedOn":"2023-03-16 13:22:33","closedOn":"","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 1,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 1,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:05 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket details by filtering with Status as Cancelled</span>
+						<span class='test-time'>Mar 16, 2023 02:13:05 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:05 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:08 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+325ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:08 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?status=Cancelled
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:08 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:08 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691482","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:01:56","updatedOn":"2023-03-16 13:02:11","closedOn":"2023-03-16 13:02:12","createdBy":"dev146 tst146"},{"id":"WO8685499","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:30:53","updatedOn":"2023-03-06 11:31:14","closedOn":"2023-03-06 11:31:14","createdBy":"dev146 tst146"},{"id":"WO8685497","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:29:17","updatedOn":"2023-03-06 11:30:04","closedOn":"2023-03-06 11:30:04","createdBy":"dev146 tst146"},{"id":"WO8684703","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:14:08","updatedOn":"2023-03-03 16:20:19","closedOn":"2023-03-03 16:20:19","createdBy":"dev146 tst146"},{"id":"WO8684702","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:09:48","updatedOn":"2023-03-03 16:13:10","closedOn":"2023-03-03 16:13:10","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 5,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 5,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:08 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket details by filtering with requestType as Amenities</span>
+						<span class='test-time'>Mar 16, 2023 02:13:08 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:08 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:12 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+537ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:12 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?site=PHX015&status=Cancelled
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:12 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:12 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691482","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:01:56","updatedOn":"2023-03-16 13:02:11","closedOn":"2023-03-16 13:02:12","createdBy":"dev146 tst146"},{"id":"WO8685499","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:30:53","updatedOn":"2023-03-06 11:31:14","closedOn":"2023-03-06 11:31:14","createdBy":"dev146 tst146"},{"id":"WO8685497","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:29:17","updatedOn":"2023-03-06 11:30:04","closedOn":"2023-03-06 11:30:04","createdBy":"dev146 tst146"},{"id":"WO8684703","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:14:08","updatedOn":"2023-03-03 16:20:19","closedOn":"2023-03-03 16:20:19","createdBy":"dev146 tst146"},{"id":"WO8684702","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:09:48","updatedOn":"2023-03-03 16:13:10","closedOn":"2023-03-03 16:13:10","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 5,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 5,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:12 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket details by filtering with Category as Shipping / Receiving</span>
+						<span class='test-time'>Mar 16, 2023 02:13:12 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:12 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:14 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+555ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:14 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?createdBy=DLR1 Super_Admin&status=In Progress
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:14 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:14 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691440","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:58:40","updatedOn":"2023-03-16 10:59:14","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691439","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:56:49","updatedOn":"2023-03-16 10:58:25","closedOn":"","createdBy":"DLR1 Super_Admin"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 2,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 2,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:14 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All-Retrieve the Shipments Ticket details by filtering with Limit value as 30</span>
+						<span class='test-time'>Mar 16, 2023 02:13:14 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:14 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:18 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+568ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:18 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?size=30
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:18 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:18 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691525","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:59:17","updatedOn":"2023-03-16 13:59:17","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691524","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:58:44","updatedOn":"2023-03-16 13:58:44","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691523","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:57:59","updatedOn":"2023-03-16 13:57:59","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691522","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:51:34","updatedOn":"2023-03-16 13:51:34","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691521","title":"title sample1","status":"Completed","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:21:01","updatedOn":"2023-03-16 13:22:33","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691482","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:01:56","updatedOn":"2023-03-16 13:02:11","closedOn":"2023-03-16 13:02:12","createdBy":"dev146 tst146"},{"id":"WO8691457","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:41:00","updatedOn":"2023-03-16 12:42:42","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691456","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:37:25","updatedOn":"2023-03-16 12:37:25","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8690891","title":"title sample","status":"New","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:39:22","updatedOn":"2023-03-15 15:39:22","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685533","title":"title sample","status":"New","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 12:39:29","updatedOn":"2023-03-06 12:39:29","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685499","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:30:53","updatedOn":"2023-03-06 11:31:14","closedOn":"2023-03-06 11:31:14","createdBy":"dev146 tst146"},{"id":"WO8685497","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:29:17","updatedOn":"2023-03-06 11:30:04","closedOn":"2023-03-06 11:30:04","createdBy":"dev146 tst146"},{"id":"WO8684703","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:14:08","updatedOn":"2023-03-03 16:20:19","closedOn":"2023-03-03 16:20:19","createdBy":"dev146 tst146"},{"id":"WO8684702","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:09:48","updatedOn":"2023-03-03 16:13:10","closedOn":"2023-03-03 16:13:10","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 14,
+                    "size": 30,
+                    "number": 0,
+                    "numberOfElements": 14,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:18 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket details by filtering with Offset values as 0</span>
+						<span class='test-time'>Mar 16, 2023 02:13:18 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:18 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:21 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+170ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:21 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?page=0
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:21 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:21 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691525","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:59:17","updatedOn":"2023-03-16 13:59:17","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691524","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:58:44","updatedOn":"2023-03-16 13:58:44","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691523","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:57:59","updatedOn":"2023-03-16 13:57:59","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691522","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:51:34","updatedOn":"2023-03-16 13:51:34","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691521","title":"title sample1","status":"Completed","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:21:01","updatedOn":"2023-03-16 13:22:33","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691482","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:01:56","updatedOn":"2023-03-16 13:02:11","closedOn":"2023-03-16 13:02:12","createdBy":"dev146 tst146"},{"id":"WO8691457","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:41:00","updatedOn":"2023-03-16 12:42:42","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691456","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:37:25","updatedOn":"2023-03-16 12:37:25","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8690891","title":"title sample","status":"New","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:39:22","updatedOn":"2023-03-15 15:39:22","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685533","title":"title sample","status":"New","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 12:39:29","updatedOn":"2023-03-06 12:39:29","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685499","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:30:53","updatedOn":"2023-03-06 11:31:14","closedOn":"2023-03-06 11:31:14","createdBy":"dev146 tst146"},{"id":"WO8685497","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:29:17","updatedOn":"2023-03-06 11:30:04","closedOn":"2023-03-06 11:30:04","createdBy":"dev146 tst146"},{"id":"WO8684703","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:14:08","updatedOn":"2023-03-03 16:20:19","closedOn":"2023-03-03 16:20:19","createdBy":"dev146 tst146"},{"id":"WO8684702","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:09:48","updatedOn":"2023-03-03 16:13:10","closedOn":"2023-03-03 16:13:10","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 14,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 14,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:21 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket details by filtering with site as DFW10 and Status as New</span>
+						<span class='test-time'>Mar 16, 2023 02:13:21 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:21 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:24 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+977ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:24 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?site=PHX015&status=New
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:24 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:24 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691525","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:59:17","updatedOn":"2023-03-16 13:59:17","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691524","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:58:44","updatedOn":"2023-03-16 13:58:44","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691523","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:57:59","updatedOn":"2023-03-16 13:57:59","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691522","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:51:34","updatedOn":"2023-03-16 13:51:34","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691456","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:37:25","updatedOn":"2023-03-16 12:37:25","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8690891","title":"title sample","status":"New","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:39:22","updatedOn":"2023-03-15 15:39:22","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685533","title":"title sample","status":"New","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 12:39:29","updatedOn":"2023-03-06 12:39:29","closedOn":"","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 7,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 7,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:24 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket details by filtering with site as DFW10 and  CreatedBy as John Johnson</span>
+						<span class='test-time'>Mar 16, 2023 02:13:24 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:24 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+402ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:28 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?site=PHX015&size=15
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:28 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:28 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691525","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:59:17","updatedOn":"2023-03-16 13:59:17","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691524","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:58:44","updatedOn":"2023-03-16 13:58:44","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691523","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:57:59","updatedOn":"2023-03-16 13:57:59","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691522","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:51:34","updatedOn":"2023-03-16 13:51:34","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691521","title":"title sample1","status":"Completed","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:21:01","updatedOn":"2023-03-16 13:22:33","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691482","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:01:56","updatedOn":"2023-03-16 13:02:11","closedOn":"2023-03-16 13:02:12","createdBy":"dev146 tst146"},{"id":"WO8691457","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:41:00","updatedOn":"2023-03-16 12:42:42","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691456","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:37:25","updatedOn":"2023-03-16 12:37:25","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8690891","title":"title sample","status":"New","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:39:22","updatedOn":"2023-03-15 15:39:22","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685533","title":"title sample","status":"New","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 12:39:29","updatedOn":"2023-03-06 12:39:29","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685499","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:30:53","updatedOn":"2023-03-06 11:31:14","closedOn":"2023-03-06 11:31:14","createdBy":"dev146 tst146"},{"id":"WO8685497","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:29:17","updatedOn":"2023-03-06 11:30:04","closedOn":"2023-03-06 11:30:04","createdBy":"dev146 tst146"},{"id":"WO8684703","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:14:08","updatedOn":"2023-03-03 16:20:19","closedOn":"2023-03-03 16:20:19","createdBy":"dev146 tst146"},{"id":"WO8684702","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:09:48","updatedOn":"2023-03-03 16:13:10","closedOn":"2023-03-03 16:13:10","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 14,
+                    "size": 15,
+                    "number": 0,
+                    "numberOfElements": 14,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:28 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket details by filtering with  Site as DFW10 and requestType as Amenities</span>
+						<span class='test-time'>Mar 16, 2023 02:13:28 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:28 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:31 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+832ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:31 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?site=PHX015&createdBy=DLR1 Super_Admin
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:31 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:31 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691441","title":"title sample1","status":"Cancelled","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:59:27","updatedOn":"2023-03-16 11:01:40","closedOn":"2023-03-16 11:01:40","createdBy":"DLR1 Super_Admin"},{"id":"WO8691440","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:58:40","updatedOn":"2023-03-16 10:59:14","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691439","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:56:49","updatedOn":"2023-03-16 10:58:25","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691437","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:40:59","updatedOn":"2023-03-16 10:41:02","closedOn":"2023-03-16 10:41:02","createdBy":"DLR1 Super_Admin"},{"id":"WO8691436","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:40:53","updatedOn":"2023-03-16 10:40:56","closedOn":"2023-03-16 10:40:56","createdBy":"DLR1 Super_Admin"},{"id":"WO8691435","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:40:47","updatedOn":"2023-03-16 10:40:50","closedOn":"2023-03-16 10:40:50","createdBy":"DLR1 Super_Admin"},{"id":"WO8691430","title":"shipment title ","status":"New","site":"PHX015","courier":"DTDCTEST","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:40:23","updatedOn":"2023-03-16 10:40:25","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691411","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:23","updatedOn":"2023-03-16 10:37:26","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691410","title":"Edit title","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:19","updatedOn":"2023-03-16 10:37:21","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691409","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:14","updatedOn":"2023-03-16 10:37:17","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691408","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:11","updatedOn":"2023-03-16 10:37:11","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691407","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:08","updatedOn":"2023-03-16 10:37:08","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691406","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:04","updatedOn":"2023-03-16 10:37:06","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691405","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:36:59","updatedOn":"2023-03-16 10:37:02","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691404","title":"shipment title ","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:36:54","updatedOn":"2023-03-16 10:36:57","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691403","title":"title sample   ","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:36:49","updatedOn":"2023-03-16 10:36:52","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691385","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:40","updatedOn":"2023-03-16 10:30:40","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691384","title":"shipment title ","status":"New","site":"PHX015","courier":"DTDCTEST","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:31","updatedOn":"2023-03-16 10:30:31","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691383","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:26","updatedOn":"2023-03-16 10:30:26","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691382","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:22","updatedOn":"2023-03-16 10:30:22","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691381","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:14","updatedOn":"2023-03-16 10:30:14","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691380","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:09","updatedOn":"2023-03-16 10:30:09","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691379","title":"shipment title","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:05","updatedOn":"2023-03-16 10:30:05","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691378","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:00","updatedOn":"2023-03-16 10:30:00","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691377","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:56","updatedOn":"2023-03-16 10:29:56","closedOn":"","createdBy":"DLR1 Super_Admin"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 25,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 25,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:31 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipments Ticket by filtering with  Site as DFW10 & Category as Shipping / Receiving</span>
+						<span class='test-time'>Mar 16, 2023 02:13:31 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:31 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:34 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+727ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:34 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?site=PHX015&status=Completed
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:34 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:34 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691521","title":"title sample1","status":"Completed","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:21:01","updatedOn":"2023-03-16 13:22:33","closedOn":"","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 1,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 1,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:34 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with  Site as DFW10 & Limit as 30</span>
+						<span class='test-time'>Mar 16, 2023 02:13:34 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:34 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:37 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+260ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:37 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?site=PHX015&size=30
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:37 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:37 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691525","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:59:17","updatedOn":"2023-03-16 13:59:17","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691524","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:58:44","updatedOn":"2023-03-16 13:58:44","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691523","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:57:59","updatedOn":"2023-03-16 13:57:59","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691522","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:51:34","updatedOn":"2023-03-16 13:51:34","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691521","title":"title sample1","status":"Completed","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:21:01","updatedOn":"2023-03-16 13:22:33","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691482","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:01:56","updatedOn":"2023-03-16 13:02:11","closedOn":"2023-03-16 13:02:12","createdBy":"dev146 tst146"},{"id":"WO8691457","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:41:00","updatedOn":"2023-03-16 12:42:42","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691456","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:37:25","updatedOn":"2023-03-16 12:37:25","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8690891","title":"title sample","status":"New","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:39:22","updatedOn":"2023-03-15 15:39:22","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685533","title":"title sample","status":"New","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 12:39:29","updatedOn":"2023-03-06 12:39:29","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685499","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:30:53","updatedOn":"2023-03-06 11:31:14","closedOn":"2023-03-06 11:31:14","createdBy":"dev146 tst146"},{"id":"WO8685497","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:29:17","updatedOn":"2023-03-06 11:30:04","closedOn":"2023-03-06 11:30:04","createdBy":"dev146 tst146"},{"id":"WO8684703","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:14:08","updatedOn":"2023-03-03 16:20:19","closedOn":"2023-03-03 16:20:19","createdBy":"dev146 tst146"},{"id":"WO8684702","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:09:48","updatedOn":"2023-03-03 16:13:10","closedOn":"2023-03-03 16:13:10","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 14,
+                    "size": 30,
+                    "number": 0,
+                    "numberOfElements": 14,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:37 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with  Site  as DFW10& offset as 0</span>
+						<span class='test-time'>Mar 16, 2023 02:13:37 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:37 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:41 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+745ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:41 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?site=PHX015&page=0
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:41 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:41 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691525","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:59:17","updatedOn":"2023-03-16 13:59:17","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691524","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:58:44","updatedOn":"2023-03-16 13:58:44","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691523","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:57:59","updatedOn":"2023-03-16 13:57:59","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691522","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:51:34","updatedOn":"2023-03-16 13:51:34","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691521","title":"title sample1","status":"Completed","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:21:01","updatedOn":"2023-03-16 13:22:33","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691482","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:01:56","updatedOn":"2023-03-16 13:02:11","closedOn":"2023-03-16 13:02:12","createdBy":"dev146 tst146"},{"id":"WO8691457","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:41:00","updatedOn":"2023-03-16 12:42:42","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691456","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:37:25","updatedOn":"2023-03-16 12:37:25","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8690891","title":"title sample","status":"New","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:39:22","updatedOn":"2023-03-15 15:39:22","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685533","title":"title sample","status":"New","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 12:39:29","updatedOn":"2023-03-06 12:39:29","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685499","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:30:53","updatedOn":"2023-03-06 11:31:14","closedOn":"2023-03-06 11:31:14","createdBy":"dev146 tst146"},{"id":"WO8685497","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:29:17","updatedOn":"2023-03-06 11:30:04","closedOn":"2023-03-06 11:30:04","createdBy":"dev146 tst146"},{"id":"WO8684703","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:14:08","updatedOn":"2023-03-03 16:20:19","closedOn":"2023-03-03 16:20:19","createdBy":"dev146 tst146"},{"id":"WO8684702","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:09:48","updatedOn":"2023-03-03 16:13:10","closedOn":"2023-03-03 16:13:10","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 14,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 14,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:41 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with  Status as New and CreatedBy as John Johnson</span>
+						<span class='test-time'>Mar 16, 2023 02:13:41 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:41 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:46 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+476ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:46 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?status=New&createdBy=DLR1 Super_Admin
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:46 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:46 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691430","title":"shipment title ","status":"New","site":"PHX015","courier":"DTDCTEST","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:40:23","updatedOn":"2023-03-16 10:40:25","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691411","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:23","updatedOn":"2023-03-16 10:37:26","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691410","title":"Edit title","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:19","updatedOn":"2023-03-16 10:37:21","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691409","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:14","updatedOn":"2023-03-16 10:37:17","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691408","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:11","updatedOn":"2023-03-16 10:37:11","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691407","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:08","updatedOn":"2023-03-16 10:37:08","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691406","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:04","updatedOn":"2023-03-16 10:37:06","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691405","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:36:59","updatedOn":"2023-03-16 10:37:02","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691404","title":"shipment title ","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:36:54","updatedOn":"2023-03-16 10:36:57","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691403","title":"title sample   ","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:36:49","updatedOn":"2023-03-16 10:36:52","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691385","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:40","updatedOn":"2023-03-16 10:30:40","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691384","title":"shipment title ","status":"New","site":"PHX015","courier":"DTDCTEST","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:31","updatedOn":"2023-03-16 10:30:31","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691383","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:26","updatedOn":"2023-03-16 10:30:26","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691382","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:22","updatedOn":"2023-03-16 10:30:22","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691381","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:14","updatedOn":"2023-03-16 10:30:14","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691380","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:09","updatedOn":"2023-03-16 10:30:09","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691379","title":"shipment title","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:05","updatedOn":"2023-03-16 10:30:05","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691378","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:00","updatedOn":"2023-03-16 10:30:00","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691377","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:56","updatedOn":"2023-03-16 10:29:56","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691376","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:52","updatedOn":"2023-03-16 10:29:52","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691375","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:50","updatedOn":"2023-03-16 10:29:50","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691374","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:48","updatedOn":"2023-03-16 10:29:48","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691373","title":"title sample   ","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:46","updatedOn":"2023-03-16 10:29:46","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691372","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:36","updatedOn":"2023-03-16 10:29:44","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691275","title":"shipment title ","status":"New","site":"PHX015","courier":"DTDCTEST","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 08:58:43","updatedOn":"2023-03-16 08:58:44","closedOn":"","createdBy":"DLR1 Super_Admin"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 25,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 25,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:46 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with  Status as New and Limit as 30</span>
+						<span class='test-time'>Mar 16, 2023 02:13:46 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:46 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:49 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+948ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:49 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?status=New&size=30
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:49 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:49 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691525","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:59:17","updatedOn":"2023-03-16 13:59:17","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691524","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:58:44","updatedOn":"2023-03-16 13:58:44","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691523","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:57:59","updatedOn":"2023-03-16 13:57:59","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691522","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:51:34","updatedOn":"2023-03-16 13:51:34","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691456","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:37:25","updatedOn":"2023-03-16 12:37:25","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8690891","title":"title sample","status":"New","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:39:22","updatedOn":"2023-03-15 15:39:22","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685533","title":"title sample","status":"New","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 12:39:29","updatedOn":"2023-03-06 12:39:29","closedOn":"","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 7,
+                    "size": 30,
+                    "number": 0,
+                    "numberOfElements": 7,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:49 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with  Status as New and offset as 20</span>
+						<span class='test-time'>Mar 16, 2023 02:13:49 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:49 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:51 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+580ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:51 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?status=New&page=20
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:51 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:51 PM</td>
+				<td class='step-details'>
+						{
+                "content": [],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 0,
+                    "totalElements": 0,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 0,
+                    "first": true,
+                    "empty": true
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>2:13:51 PM</td>
+				<td class='step-details'>
+						<details><summary><b><font color = red>Exception Occured, Click to see details:</font></b></summary>[org.testng.Assert.fail(Assert.java:99)<br> org.testng.Assert.failNotEquals(Assert.java:1037)<br> org.testng.Assert.assertTrue(Assert.java:45)<br> org.testng.Assert.assertTrue(Assert.java:55)<br> com.gapi.testCases.GetShipmentsTicketDetails.verifyGetAllWithShipmentsTicketFilters(GetShipmentsTicketDetails.java:101)<br> jdk.internal.reflect.GeneratedMethodAccessor145.invoke(Unknown Source)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:568)<br> org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)<br> org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)<br> org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br> org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br> org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)<br> org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br> org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br> org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br> java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br> org.testng.TestRunner.privateRun(TestRunner.java:794)<br> org.testng.TestRunner.run(TestRunner.java:596)<br> org.testng.SuiteRunner.runTest(SuiteRunner.java:377)<br> org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)<br> org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)<br> org.testng.SuiteRunner.run(SuiteRunner.java:276)<br> org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br> org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)<br> org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)<br> org.testng.TestNG.runSuitesLocally(TestNG.java:1134)<br> org.testng.TestNG.runSuites(TestNG.java:1063)<br> org.testng.TestNG.run(TestNG.java:1031)<br> org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br> org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br> org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]</details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>2:13:51 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>java.lang.AssertionError: expected [true] but found [false]Test Failed</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>2:13:51 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site as DFW10 ,Status as In Progres &createdBy as John Johnson</span>
+						<span class='test-time'>Mar 16, 2023 02:13:51 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:51 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:54 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+881ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:54 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?site=PHX015&status=In Progress&createdBy=DLR1 Super_Admin
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:54 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:54 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691440","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:58:40","updatedOn":"2023-03-16 10:59:14","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691439","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:56:49","updatedOn":"2023-03-16 10:58:25","closedOn":"","createdBy":"DLR1 Super_Admin"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 2,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 2,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:54 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site as DFW10 ,Status as In Progress& Limit as 30</span>
+						<span class='test-time'>Mar 16, 2023 02:13:54 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:54 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:57 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+590ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:57 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?status=In Progress&site=PHX015&size=30
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:57 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:57 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691457","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:41:00","updatedOn":"2023-03-16 12:42:42","closedOn":"","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 1,
+                    "size": 30,
+                    "number": 0,
+                    "numberOfElements": 1,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:57 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site as DFW10 ,Status as In Progress&offset as 20</span>
+						<span class='test-time'>Mar 16, 2023 02:13:57 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:57 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:13:59 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+728ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:13:59 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?status=In Progress&site=PHX015&page=0
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:59 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:59 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691457","title":"title sample1","status":"In Progress","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:41:00","updatedOn":"2023-03-16 12:42:42","closedOn":"","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 1,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 1,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:13:59 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site DFW10 ,Status as Cancelled,Limit as 30 & offset as 20</span>
+						<span class='test-time'>Mar 16, 2023 02:13:59 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:13:59 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:14:02 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+25ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:14:02 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?size=30&status=Cancelled&page=0&site=PHX015
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:02 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:02 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691482","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:01:56","updatedOn":"2023-03-16 13:02:11","closedOn":"2023-03-16 13:02:12","createdBy":"dev146 tst146"},{"id":"WO8685499","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:30:53","updatedOn":"2023-03-06 11:31:14","closedOn":"2023-03-06 11:31:14","createdBy":"dev146 tst146"},{"id":"WO8685497","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:29:17","updatedOn":"2023-03-06 11:30:04","closedOn":"2023-03-06 11:30:04","createdBy":"dev146 tst146"},{"id":"WO8684703","title":"title sample","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:14:08","updatedOn":"2023-03-03 16:20:19","closedOn":"2023-03-03 16:20:19","createdBy":"dev146 tst146"},{"id":"WO8684702","title":"title sample","status":"Cancelled","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-03 16:09:48","updatedOn":"2023-03-03 16:13:10","closedOn":"2023-03-03 16:13:10","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 5,
+                    "size": 30,
+                    "number": 0,
+                    "numberOfElements": 5,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:02 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='24'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site DFW10 ,Status as Completed,Limit as 30 & offset as 0</span>
+						<span class='test-time'>Mar 16, 2023 02:14:02 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:14:02 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:14:05 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+831ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:14:05 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?status=Completed&site=PHX015&page=0&size=30
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:05 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:05 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691521","title":"title sample1","status":"Completed","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:21:01","updatedOn":"2023-03-16 13:22:33","closedOn":"","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 1,
+                    "size": 30,
+                    "number": 0,
+                    "numberOfElements": 1,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:05 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='25'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site as DFW10,Status as New &createdBy as John JohnSon</span>
+						<span class='test-time'>Mar 16, 2023 02:14:05 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:14:05 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:14:09 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+71ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:14:09 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?status=New&site=PHX015&createdBy=DLR1 Super_Admin
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:09 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:09 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691430","title":"shipment title ","status":"New","site":"PHX015","courier":"DTDCTEST","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:40:23","updatedOn":"2023-03-16 10:40:25","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691411","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:23","updatedOn":"2023-03-16 10:37:26","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691410","title":"Edit title","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:19","updatedOn":"2023-03-16 10:37:21","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691409","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:14","updatedOn":"2023-03-16 10:37:17","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691408","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:11","updatedOn":"2023-03-16 10:37:11","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691407","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:08","updatedOn":"2023-03-16 10:37:08","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691406","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:37:04","updatedOn":"2023-03-16 10:37:06","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691405","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:36:59","updatedOn":"2023-03-16 10:37:02","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691404","title":"shipment title ","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:36:54","updatedOn":"2023-03-16 10:36:57","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691403","title":"title sample   ","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:36:49","updatedOn":"2023-03-16 10:36:52","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691385","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:40","updatedOn":"2023-03-16 10:30:40","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691384","title":"shipment title ","status":"New","site":"PHX015","courier":"DTDCTEST","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:31","updatedOn":"2023-03-16 10:30:31","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691383","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:26","updatedOn":"2023-03-16 10:30:26","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691382","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:22","updatedOn":"2023-03-16 10:30:22","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691381","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:14","updatedOn":"2023-03-16 10:30:14","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691380","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:09","updatedOn":"2023-03-16 10:30:09","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691379","title":"shipment title","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:05","updatedOn":"2023-03-16 10:30:05","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691378","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:30:00","updatedOn":"2023-03-16 10:30:00","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691377","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:56","updatedOn":"2023-03-16 10:29:56","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691376","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:52","updatedOn":"2023-03-16 10:29:52","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691375","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:50","updatedOn":"2023-03-16 10:29:50","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691374","title":"shipment title ","status":"New","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:48","updatedOn":"2023-03-16 10:29:48","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691373","title":"title sample   ","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:46","updatedOn":"2023-03-16 10:29:46","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691372","title":"shipment title","status":"New","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:29:36","updatedOn":"2023-03-16 10:29:44","closedOn":"","createdBy":"DLR1 Super_Admin"},{"id":"WO8691275","title":"shipment title ","status":"New","site":"PHX015","courier":"DTDCTEST","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 08:58:43","updatedOn":"2023-03-16 08:58:44","closedOn":"","createdBy":"DLR1 Super_Admin"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 25,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 25,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:09 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='26'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site as DFW10,Status as In Progress,Limit as 30 &offset as 0</span>
+						<span class='test-time'>Mar 16, 2023 02:14:09 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:14:09 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:14:13 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+614ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:14:13 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?size=30&status=New&page=0&site=PHX015
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:13 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:13 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691525","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:59:17","updatedOn":"2023-03-16 13:59:17","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691524","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:58:44","updatedOn":"2023-03-16 13:58:44","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691523","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:57:59","updatedOn":"2023-03-16 13:57:59","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691522","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 13:51:34","updatedOn":"2023-03-16 13:51:34","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8691456","title":"title sample1","status":"New","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 12:37:25","updatedOn":"2023-03-16 12:37:25","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8690891","title":"title sample","status":"New","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:39:22","updatedOn":"2023-03-15 15:39:22","closedOn":"","createdBy":"dev146 tst146"},{"id":"WO8685533","title":"title sample","status":"New","site":"PHX015","courier":"","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 12:39:29","updatedOn":"2023-03-06 12:39:29","closedOn":"","createdBy":"dev146 tst146"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 7,
+                    "size": 30,
+                    "number": 0,
+                    "numberOfElements": 7,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:13 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='27'>
+					<div class='test-heading'>
+						<span class='test-name'>Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site as DFW10,Status as Cancelled,createdBy as John JohnSon,Limit as 30&Offset as 0</span>
+						<span class='test-time'>Mar 16, 2023 02:14:13 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 16, 2023 02:14:13 PM</span>
+	<span class='label end-time'>Mar 16, 2023 02:14:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+403ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>2:14:17 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/shipment-tickets?size=30&status=Cancelled&page=0&site=PHX015&createdBy=DLR1 Super_Admin
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:17 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:17 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8691441","title":"title sample1","status":"Cancelled","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:59:27","updatedOn":"2023-03-16 11:01:40","closedOn":"2023-03-16 11:01:40","createdBy":"DLR1 Super_Admin"},{"id":"WO8691437","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:40:59","updatedOn":"2023-03-16 10:41:02","closedOn":"2023-03-16 10:41:02","createdBy":"DLR1 Super_Admin"},{"id":"WO8691436","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:40:53","updatedOn":"2023-03-16 10:40:56","closedOn":"2023-03-16 10:40:56","createdBy":"DLR1 Super_Admin"},{"id":"WO8691435","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 10:40:47","updatedOn":"2023-03-16 10:40:50","closedOn":"2023-03-16 10:40:50","createdBy":"DLR1 Super_Admin"},{"id":"WO8691282","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 08:59:18","updatedOn":"2023-03-16 08:59:20","closedOn":"2023-03-16 08:59:20","createdBy":"DLR1 Super_Admin"},{"id":"WO8691281","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 08:59:12","updatedOn":"2023-03-16 08:59:14","closedOn":"2023-03-16 08:59:14","createdBy":"DLR1 Super_Admin"},{"id":"WO8691280","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-16 08:59:06","updatedOn":"2023-03-16 08:59:08","closedOn":"2023-03-16 08:59:08","createdBy":"DLR1 Super_Admin"},{"id":"WO8691003","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 16:32:43","updatedOn":"2023-03-15 16:32:46","closedOn":"2023-03-15 16:32:46","createdBy":"DLR1 Super_Admin"},{"id":"WO8691002","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 16:32:37","updatedOn":"2023-03-15 16:32:40","closedOn":"2023-03-15 16:32:40","createdBy":"DLR1 Super_Admin"},{"id":"WO8691001","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 16:32:31","updatedOn":"2023-03-15 16:32:33","closedOn":"2023-03-15 16:32:33","createdBy":"DLR1 Super_Admin"},{"id":"WO8690889","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:01:58","updatedOn":"2023-03-15 15:02:01","closedOn":"2023-03-15 15:02:01","createdBy":"DLR1 Super_Admin"},{"id":"WO8690888","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:01:52","updatedOn":"2023-03-15 15:01:55","closedOn":"2023-03-15 15:01:55","createdBy":"DLR1 Super_Admin"},{"id":"WO8690887","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 15:01:46","updatedOn":"2023-03-15 15:01:49","closedOn":"2023-03-15 15:01:49","createdBy":"DLR1 Super_Admin"},{"id":"WO8690644","title":"Welcome to title 1 .","status":"Cancelled","site":"PHX015","courier":"UPS","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 12:12:20","updatedOn":"2023-03-15 12:21:53","closedOn":"2023-03-15 12:21:53","createdBy":"DLR1 Super_Admin"},{"id":"WO8690607","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 10:26:10","updatedOn":"2023-03-15 10:26:14","closedOn":"2023-03-15 10:26:14","createdBy":"DLR1 Super_Admin"},{"id":"WO8690606","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 10:26:04","updatedOn":"2023-03-15 10:26:07","closedOn":"2023-03-15 10:26:07","createdBy":"DLR1 Super_Admin"},{"id":"WO8690605","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 10:25:58","updatedOn":"2023-03-15 10:26:01","closedOn":"2023-03-15 10:26:01","createdBy":"DLR1 Super_Admin"},{"id":"WO8690440","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 08:51:20","updatedOn":"2023-03-15 08:51:23","closedOn":"2023-03-15 08:51:23","createdBy":"DLR1 Super_Admin"},{"id":"WO8690439","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 08:51:15","updatedOn":"2023-03-15 08:51:17","closedOn":"2023-03-15 08:51:17","createdBy":"DLR1 Super_Admin"},{"id":"WO8690438","title":"title sample   ","status":"Cancelled","site":"PHX015","courier":"test","requiresRemoteHandsTicket":"","createdOn":"2023-03-15 08:51:09","updatedOn":"2023-03-15 08:51:11","closedOn":"2023-03-15 08:51:11","createdBy":"DLR1 Super_Admin"},{"id":"WO8689993","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-14 13:14:26","updatedOn":"2023-03-14 13:14:28","closedOn":"2023-03-14 13:14:28","createdBy":"DLR1 Super_Admin"},{"id":"WO8689895","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-14 12:29:46","updatedOn":"2023-03-14 12:29:49","closedOn":"2023-03-14 12:29:49","createdBy":"DLR1 Super_Admin"},{"id":"WO8689864","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-14 12:25:14","updatedOn":"2023-03-14 12:25:17","closedOn":"2023-03-14 12:25:17","createdBy":"DLR1 Super_Admin"},{"id":"WO8689223","title":"shipment title ","status":"Cancelled","site":"PHX015","courier":"DHL","requiresRemoteHandsTicket":"","createdOn":"2023-03-13 20:24:11","updatedOn":"2023-03-13 20:24:14","closedOn":"2023-03-13 20:24:14","createdBy":"DLR1 Super_Admin"},{"id":"WO8685505","title":"Sample title","status":"Cancelled","site":"PHX015","courier":"USP","requiresRemoteHandsTicket":"","createdOn":"2023-03-06 11:50:36","updatedOn":"2023-03-06 11:54:15","closedOn":"2023-03-06 11:54:15","createdBy":"DLR1 Super_Admin"}],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 1,
+                    "totalElements": 25,
+                    "size": 30,
+                    "number": 0,
+                    "numberOfElements": 25,
+                    "first": true,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>2:14:17 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithShipmentsTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>27</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Mar 16, 2023 02:12:42 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Mar 16, 2023 02:12:42 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 0s+0ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Environemnt</td>
+								<td>TEST</td>
+							</tr>
+							<tr>
+								<td>user</td>
+								<td>Ramu Kasi</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+				passParent: 26,
+				failParent: 1,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 1,
+				
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "Verify Get-All- Retrieve the Shipments Ticket details by filtering with  Site name":4.25,"Verify Get-All- Retrieve the Shipments Ticket details by filtering with requestType=Amenities&category=Shipping / Receiving":5.07,"Verify Get-All- Retrieve the Shipments Ticket details by filtering with Status as New":3.655,"Verify Get-All- Retrieve the Shipments Ticket details by filtering with Status as InProgress":4.059,"Verify Get-All- Retrieve the Shipments Ticket details by filtering with Status as Completed":3.108,"Verify Get-All- Retrieve the Shipments Ticket details by filtering with Status as Cancelled":3.325,"Verify Get-All- Retrieve the Shipments Ticket details by filtering with requestType as Amenities":3.537,"Verify Get-All- Retrieve the Shipments Ticket details by filtering with Category as Shipping / Receiving":2.555,"Verify Get-All-Retrieve the Shipments Ticket details by filtering with Limit value as 30":3.568,"Verify Get-All- Retrieve the Shipments Ticket details by filtering with Offset values as 0":3.17,"Verify Get-All- Retrieve the Shipments Ticket details by filtering with site as DFW10 and Status as New":2.977,"Verify Get-All- Retrieve the Shipments Ticket details by filtering with site as DFW10 and  CreatedBy as John Johnson":3.402,"Verify Get-All- Retrieve the Shipments Ticket details by filtering with  Site as DFW10 and requestType as Amenities":3.832,"Verify Get-All- Retrieve the Shipments Ticket by filtering with  Site as DFW10 & Category as Shipping / Receiving":2.727,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with  Site as DFW10 & Limit as 30":3.26,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with  Site  as DFW10& offset as 0":3.745,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with  Status as New and CreatedBy as John Johnson":4.476,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with  Status as New and Limit as 30":2.948,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with  Status as New and offset as 20":2.58,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site as DFW10 ,Status as In Progres &createdBy as John Johnson":2.881,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site as DFW10 ,Status as In Progress& Limit as 30":2.59,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site as DFW10 ,Status as In Progress&offset as 20":2.728,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site DFW10 ,Status as Cancelled,Limit as 30 & offset as 20":3.025,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site DFW10 ,Status as Completed,Limit as 30 & offset as 0":2.831,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site as DFW10,Status as New &createdBy as John JohnSon":4.071,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site as DFW10,Status as In Progress,Limit as 30 &offset as 0":3.614,"Verify Get-All- Retrieve the Shipment Ticket details by filtering with Site as DFW10,Status as Cancelled,createdBy as John JohnSon,Limit as 30&Offset as 0":4.403
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/master/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+			
+            
+                $(document).ready(function() {
+                    
+                });
+            
+        
+		</script>
+	</body>
+</html>

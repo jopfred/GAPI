@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/191775216e8ce53c38791eb07a1d2f31d0ae11b5/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>GAPI project</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+			
+            
+                
+            
+        
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>API Functional Test Automation Report</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Mar 28, 2023 04:54:27 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box' style="max-height:94px;">
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='100%'><span class='strong'>3</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="timeline-chart" class="row nm-v nm-h">
+		<div class="col s12 m12 l12 np-h">
+			<div class="card-panel">
+				<div class='left panel-name'>Timeline (seconds)</div>
+				<div class="chart-box" style="width:98%;max-height:145px;">
+					<canvas id="timeline" height="120"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Validate if we are able to create Permission Group</span>
+						<span class='test-time'>Mar 28, 2023 04:54:30 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 04:54:30 PM</span>
+	<span class='label end-time'>Mar 28, 2023 04:54:33 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+389ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>4:54:30 PM</td>
+				<td class='step-details'>
+						{"content":[{"version":null,"name":"Billing679","id":"016f55a3-b8dc-49c3-a023-acab16e964f4"},{"version":null,"name":"PermissionGroup2","id":"0614664c-784d-429f-88c8-a4448874fdfc"},{"version":null,"name":"automationPermissionGroupName362","id":"07df285a-0eaf-450c-859a-298a0e21dd61"},{"version":null,"name":"Custom Group Test Yefferson #2","id":"0e044aeb-1e93-47fc-98ae-afc525e9adc9"},{"version":null,"name":"Reports_Test4","id":"1fc7d65e-ef28-417a-b703-e941b6fb88b9"},{"version":null,"name":"Reports","id":"22c87a93-feda-4efe-9269-26bb79210f72"},{"version":null,"name":"Inventory Management","id":"24484f5c-1cf5-4dda-93a2-35d4117265e3"},{"version":null,"name":"Billing2211","id":"2cca3f46-66d4-46f1-a14b-16f38f1310f7"},{"version":null,"name":"Billing222","id":"2dd22063-9e6c-4a87-bca9-b3d768aac170"},{"version":null,"name":"Billing209","id":"30066346-3de7-478d-8790-aa6fda4d94aa"},{"version":null,"name":"Billing4","id":"3b9fcbd2-2aca-45e5-8799-3e3b8b572522"},{"version":null,"name":"automationPermissionGroupName191","id":"40c2665b-556d-44b0-9e7f-0f954cf4e950"},{"version":null,"name":"New name","id":"42ac601c-0492-46b6-b1c6-74d7d07c8d40"},{"version":null,"name":"CUSTOMER_ROLES206","id":"471efdb3-7b2e-4ef7-8af1-5b720c7c8b23"},{"version":null,"name":"Billing221","id":"485e1fe0-f4a8-47e2-8d02-b81735c17752"},{"version":null,"name":"PermissionGroup11","id":"4ab2c736-bf5b-4ba6-884b-ef8375dbba6c"},{"version":null,"name":"CUSTOMER_ROLES228","id":"4c35e26f-65d4-46c5-bead-c1e67dc680c0"},{"version":null,"name":"Custom Test 1","id":"4d3e7f04-4a1d-4a4a-b0a0-3db46372988f"},{"version":null,"name":"automationPermissionGroupName211","id":"52047aca-4a9a-41f1-8659-4398e2d8ff13"},{"version":null,"name":"CUSTOMER_ROLES225","id":"56c24795-738a-4253-a795-0b258d623a2e"}],"pageable":{"sort":{"sorted":true,"unsorted":false,"empty":false},"offset":0,"pageNumber":0,"pageSize":20,"paged":true,"unpaged":false},"last":false,"totalPages":4,"totalElements":70,"number":0,"sort":{"sorted":true,"unsorted":false,"empty":false},"size":20,"first":true,"numberOfElements":20,"empty":false}
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:30 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:30 PM</td>
+				<td class='step-details'>
+						Created permissionGroupId is
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:30 PM</td>
+				<td class='step-details'>
+						Successfully Created Permission Group
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:33 PM</td>
+				<td class='step-details'>
+						Error Response message is {"content":[{"version":null,"name":"Billing679","id":"016f55a3-b8dc-49c3-a023-acab16e964f4"},{"version":null,"name":"PermissionGroup2","id":"0614664c-784d-429f-88c8-a4448874fdfc"},{"version":null,"name":"automationPermissionGroupName362","id":"07df285a-0eaf-450c-859a-298a0e21dd61"},{"version":null,"name":"Custom Group Test Yefferson #2","id":"0e044aeb-1e93-47fc-98ae-afc525e9adc9"},{"version":null,"name":"Reports_Test4","id":"1fc7d65e-ef28-417a-b703-e941b6fb88b9"},{"version":null,"name":"Reports","id":"22c87a93-feda-4efe-9269-26bb79210f72"},{"version":null,"name":"Inventory Management","id":"24484f5c-1cf5-4dda-93a2-35d4117265e3"},{"version":null,"name":"Billing2211","id":"2cca3f46-66d4-46f1-a14b-16f38f1310f7"},{"version":null,"name":"Billing222","id":"2dd22063-9e6c-4a87-bca9-b3d768aac170"},{"version":null,"name":"Billing209","id":"30066346-3de7-478d-8790-aa6fda4d94aa"},{"version":null,"name":"Billing4","id":"3b9fcbd2-2aca-45e5-8799-3e3b8b572522"},{"version":null,"name":"automationPermissionGroupName191","id":"40c2665b-556d-44b0-9e7f-0f954cf4e950"},{"version":null,"name":"New name","id":"42ac601c-0492-46b6-b1c6-74d7d07c8d40"},{"version":null,"name":"CUSTOMER_ROLES206","id":"471efdb3-7b2e-4ef7-8af1-5b720c7c8b23"},{"version":null,"name":"Billing221","id":"485e1fe0-f4a8-47e2-8d02-b81735c17752"},{"version":null,"name":"PermissionGroup11","id":"4ab2c736-bf5b-4ba6-884b-ef8375dbba6c"},{"version":null,"name":"CUSTOMER_ROLES228","id":"4c35e26f-65d4-46c5-bead-c1e67dc680c0"},{"version":null,"name":"Custom Test 1","id":"4d3e7f04-4a1d-4a4a-b0a0-3db46372988f"},{"version":null,"name":"automationPermissionGroupName211","id":"52047aca-4a9a-41f1-8659-4398e2d8ff13"},{"version":null,"name":"CUSTOMER_ROLES225","id":"56c24795-738a-4253-a795-0b258d623a2e"}],"pageable":{"sort":{"sorted":true,"unsorted":false,"empty":false},"offset":0,"pageNumber":0,"pageSize":20,"paged":true,"unpaged":false},"last":false,"totalPages":4,"totalElements":70,"number":0,"sort":{"sorted":true,"unsorted":false,"empty":false},"size":20,"first":true,"numberOfElements":20,"empty":false}
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:33 PM</td>
+				<td class='step-details'>
+						Not allowed to create Permission Group
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:33 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>CreatePermissionGroup</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Validate if we are able to create Permissions</span>
+						<span class='test-time'>Mar 28, 2023 04:54:33 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 04:54:33 PM</span>
+	<span class='label end-time'>Mar 28, 2023 04:54:35 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+219ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>4:54:34 PM</td>
+				<td class='step-details'>
+						{
+    "content": [
+        {
+            "version": null,
+            "name": "Internal Roles41",
+            "id": "018dc7b8-e2ba-47f2-915f-3487af46ae94",
+            "action": "Internal Roles41"
+        },
+        {
+            "version": null,
+            "name": "ReportsB1",
+            "id": "0714effd-9ae0-4d12-a279-265a1be06377",
+            "action": "REPORTSB1"
+        },
+        {
+            "version": null,
+            "name": "test sample",
+            "id": "084dee2f-279b-4260-a9ad-52c258f9b032",
+            "action": "test sample"
+        },
+        {
+            "version": null,
+            "name": "automationPermissionName695",
+            "id": "09eb7bda-bdd7-4e27-82ad-1739779928e9",
+            "action": "automationPermissionAction289"
+        },
+        {
+            "version": null,
+            "name": "Reports205A",
+            "id": "0c6a487b-2b5e-4bc4-a0f5-04c5026aed0b",
+            "action": "REPORTS205A"
+        },
+        {
+            "version": null,
+            "name": "Reports8B",
+            "id": "0dc56089-7198-419d-be61-76cc213dcc8a",
+            "action": "REPORTS8B "
+        },
+        {
+            "version": null,
+            "name": "DCIM-enabled location data",
+            "id": "142d2589-dc3c-4f86-a8f7-18c278219455",
+            "action": "DCIM-enabled location data"
+        },
+        {
+            "version": null,
+            "name": "Internal Roles14",
+            "id": "144aa7e4-95b4-4543-a1a8-830e400c0825",
+            "action": "INTERNAL_ROLES14"
+        },
+        {
+            "version": null,
+            "name": "Custom Roles",
+            "id": "16589bef-d830-4321-bc36-f3f58f2adf5d",
+            "action": "Custom Roles"
+        },
+        {
+            "version": null,
+            "name": "Visitor Access",
+            "id": "18ab32d9-48b3-4297-836a-23eaad85b0b5",
+            "action": "Visitor Access"
+        },
+        {
+            "version": null,
+            "name": "Reports7A1",
+            "id": "1ab1f977-4576-462b-bea0-f8ddf4f08692",
+            "action": "REPORTS71 "
+        },
+        {
+            "version": null,
+            "name": "Reports18B",
+            "id": "1ae48d04-d722-492b-ab08-a785998ae167",
+            "action": "Reports18B"
+        },
+        {
+            "version": null,
+            "name": "automationPermissionName372",
+            "id": "1bc3394b-6747-4e4e-b899-8406b93b117c",
+            "action": "automationPermissionAction239"
+        },
+        {
+            "version": null,
+            "name": "automationPermissionName185",
+            "id": "1de0c6dd-eb56-4911-bca7-e22cc7fef455",
+            "action": "automationPermissionAction615"
+        },
+        {
+            "version": null,
+            "name": "Reports4",
+            "id": "220ced74-06b7-48a2-924a-214a0c2c8b43",
+            "action": "REPORTS3 "
+        },
+        {
+            "version": null,
+            "name": "Reports7A",
+            "id": "24c8134a-f38b-43fa-9668-ab50460e1daf",
+            "action": "REPORTS7A "
+        },
+        {
+            "version": null,
+            "name": "Internal Roles17",
+            "id": "28c80f37-96b1-4a5c-9178-bec5f9945988",
+            "action": "INTERNAL_ROLES17"
+        },
+        {
+            "version": null,
+            "name": "Remote Hands",
+            "id": "28d240b4-8bc1-4bee-91a7-17c828080426",
+            "action": "Remote Hands"
+        },
+        {
+            "version": null,
+            "name": "Internal Roles",
+            "id": "2ccd6656-50bb-4ff6-a3b5-6e258206a302",
+            "action": "Internal Roles"
+        },
+        {
+            "version": null,
+            "name": "Reports205B",
+            "id": "2efe474a-4ce1-426b-81ef-8801f3d8df8a",
+            "action": "REPORTS205B"
+        }
+    ],
+    "pageable": {
+        "sort": {
+            "sorted": true,
+            "unsorted": false,
+            "empty": false
+        },
+        "offset": 0,
+        "pageNumber": 0,
+        "pageSize": 20,
+        "paged": true,
+        "unpaged": false
+    },
+    "last": false,
+    "totalPages": 6,
+    "totalElements": 109,
+    "number": 0,
+    "sort": {
+        "sorted": true,
+        "unsorted": false,
+        "empty": false
+    },
+    "size": 20,
+    "first": true,
+    "numberOfElements": 20,
+    "empty": false
+}
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:34 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:34 PM</td>
+				<td class='step-details'>
+						Created permission Id is  018dc7b8-e2ba-47f2-915f-3487af46ae94
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:34 PM</td>
+				<td class='step-details'>
+						Successfully Created Permissions
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:35 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>CreatePermissions</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Validate if we are able to create Roles</span>
+						<span class='test-time'>Mar 28, 2023 04:54:35 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 04:54:35 PM</span>
+	<span class='label end-time'>Mar 28, 2023 04:54:36 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+536ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>4:54:36 PM</td>
+				<td class='step-details'>
+						{"content":[{"version":1,"name":"Knowledgebase127","id":"006e3896-38bd-454c-ba8f-e0d193cc9f5a","globalUltimateKey":null,"globalAccessFlag":false},{"version":1,"name":"sbucksAdmin21243","id":"01b6d821-8967-466a-bdc7-4a510db841fe","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":0,"name":"Admin9997","id":"021b0fc0-4366-4e4a-8321-b835282a1f74","globalUltimateKey":null,"globalAccessFlag":false},{"version":5,"name":"ROLE example","id":"02efcb2c-873e-4e86-93ac-665229bac164","globalUltimateKey":null,"globalAccessFlag":false},{"version":1,"name":"Knowledgebase125","id":"03bd0d61-6db0-4c62-ba1f-8da0d7e45e9a","globalUltimateKey":null,"globalAccessFlag":false},{"version":0,"name":"Role w Testing","id":"06af895c-dbf1-4249-bb62-3e5e390caa40","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":1,"name":"-FA ALL APPROVE/UPDATE USER","id":"0704cc6c-c038-4fb9-85d9-3f4470ffc803","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":0,"name":"Test new new (Copy)","id":"089b060c-682c-41e4-aea6-717ad47d1006","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":0,"name":"Portal User - local","id":"08ba8a27-b9d3-4de5-8cb2-cadbcbce8b30","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":0,"name":"User Manage Test","id":"0a8648cf-dfe3-44be-8ad6-db6a022da4fb","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":0,"name":"testadmin","id":"0ce3b8f3-8e3d-4d5c-8e17-466759c9a660","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":0,"name":"CS Read User","id":"0f81eb60-595d-4884-86e3-e9fbf3355afd","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":0,"name":"Role z Test Copy","id":"0fcec2c7-b938-4d53-9d31-ed457b7cbe67","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":0,"name":"FA POP_POE Read User","id":"10c7d6a5-b944-4418-864c-153da69b88c6","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":4,"name":"Role y","id":"13951524-ef98-4902-b940-fa3489a90f12","globalUltimateKey":null,"globalAccessFlag":false},{"version":0,"name":"TEST 21","id":"13b04704-34d9-4f36-99a9-1aab5a11dcb9","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":0,"name":"Role 1 (Copy)","id":"1502a8de-3b46-496f-a792-b38aa7207b16","globalUltimateKey":null,"globalAccessFlag":false},{"version":0,"name":"testing","id":"1728bf01-0f2f-4d4f-a8ac-4aac877d3d0a","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":0,"name":"DLR2","id":"1862b1e6-1c1a-4bd3-b6c6-8dcc00e20cd5","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false},{"version":2,"name":"-FA ALL APPROVE/CREATE USER","id":"18904930-cd07-423b-b799-c5cc7c85bbbc","globalUltimateKey":"0012E00002mgd1dQAA","globalAccessFlag":false}],"pageable":{"sort":{"sorted":true,"unsorted":false,"empty":false},"offset":0,"pageNumber":0,"pageSize":20,"paged":true,"unpaged":false},"last":false,"totalPages":9,"totalElements":175,"number":0,"sort":{"sorted":true,"unsorted":false,"empty":false},"size":20,"first":true,"numberOfElements":20,"empty":false}
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:36 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:36 PM</td>
+				<td class='step-details'>
+						Created Role Id is  006e3896-38bd-454c-ba8f-e0d193cc9f5a
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:36 PM</td>
+				<td class='step-details'>
+						Successfully Created Roles
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>4:54:36 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>CreateRoles</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>3</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Mar 28, 2023 04:54:27 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Mar 28, 2023 04:54:27 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 0s+0ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Environemnt</td>
+								<td>TEST</td>
+							</tr>
+							<tr>
+								<td>user</td>
+								<td>Ramu Kasi</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+				passParent: 3,
+				failParent: 0,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 0,
+				
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "Validate if we are able to create Permission Group":3.389,"Validate if we are able to create Permissions":2.219,"Validate if we are able to create Roles":0.536
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/master/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+			
+            
+                $(document).ready(function() {
+                    
+                });
+            
+        
+		</script>
+	</body>
+</html>

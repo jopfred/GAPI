@@ -1,0 +1,471 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/191775216e8ce53c38791eb07a1d2f31d0ae11b5/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>GAPI project</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+			
+            
+                
+            
+        
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>API Functional Test Automation Report</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Mar 28, 2023 03:22:16 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box' style="max-height:94px;">
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='33.333%'><span class='strong'>1</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='66.667%'>2</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="timeline-chart" class="row nm-v nm-h">
+		<div class="col s12 m12 l12 np-h">
+			<div class="card-panel">
+				<div class='left panel-name'>Timeline (seconds)</div>
+				<div class="chart-box" style="width:98%;max-height:145px;">
+					<canvas id="timeline" height="120"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve all Tickets - Verify Offset(page)</span>
+						<span class='test-time'>Mar 28, 2023 03:22:19 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 03:22:19 PM</span>
+	<span class='label end-time'>Mar 28, 2023 03:22:23 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+127ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>3:22:23 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/service-tickets?page=1
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:22:23 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:22:23 PM</td>
+				<td class='step-details'>
+						{
+                "content": [{"id":"WO8703429","title":"web","status":"New","site":"PHX015","requestType":"PoP/POE Room Access","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:44:49","updatedOn":"2023-03-28 09:45:39","closedOn":"","createdBy":"Dates TestUser","ticketType":"Facility Access","description":"web","location":"COLO 8 Starbucks Cage 8.06"},{"id":"WO8703427","title":"New Visitor Access","status":"Pending Approval","site":"PHX015","requestType":"Visitor Access","category":"New Visitor Access","isBulkRequest":true,"createdOn":"2023-03-28 09:44:35","updatedOn":"2023-03-28 09:45:36","closedOn":"","createdBy":"Dates TestUser","ticketType":"Facility Access","description":"New Visitor Access","location":"COLO 8 Starbucks Cage 8.06"},{"id":"WO8703428","title":"Visitor","status":"New","site":"PHX015","requestType":"PoP/POE Room Access","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:44:43","updatedOn":"2023-03-28 09:45:34","closedOn":"","createdBy":"Dates TestUser","ticketType":"Facility Access","description":"Visitor","location":"COLO 8 Starbucks Cage 8.06"},{"id":"WO8703426","title":"New Visitor Access","status":"Approved","site":"PHX015","requestType":"Visitor Access","category":"New Visitor Access","isBulkRequest":false,"createdOn":"2023-03-28 09:44:28","updatedOn":"2023-03-28 09:45:25","closedOn":"","createdBy":"Dates TestUser","ticketType":"Facility Access","description":"New Visitor Access","location":"COLO 8 Starbucks Cage 8.06"},{"id":"WO8703424","title":"title sample","status":"New","site":"ORD010","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:44:09","updatedOn":"2023-03-28 09:45:19","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"title sample","location":""},{"id":"WO8703425","title":"New Visitor Access","status":"Approved","site":"PHX015","requestType":"Visitor Access","category":"New Visitor Access","isBulkRequest":false,"createdOn":"2023-03-28 09:44:13","updatedOn":"2023-03-28 09:45:09","closedOn":"","createdBy":"Dates TestUser","ticketType":"Facility Access","description":"New Visitor Access","location":"COLO 8 Starbucks Cage 8.06"},{"id":"WO8703423","title":"New Visitor Access","status":"Pending Approval","site":"PHX015","requestType":"Visitor Access","category":"New Visitor Access","isBulkRequest":true,"createdOn":"2023-03-28 09:44:06","updatedOn":"2023-03-28 09:45:06","closedOn":"","createdBy":"Dates TestUser","ticketType":"Facility Access","description":"New Visitor Access","location":"COLO 8 Starbucks Cage 8.06"},{"id":"WO8703422","title":"shipment title ","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:40:54","updatedOn":"2023-03-28 09:40:54","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title ","location":""},{"id":"WO8703421","title":"shipment title ","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:40:44","updatedOn":"2023-03-28 09:40:44","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title ","location":""},{"id":"WO8703420","title":"shipment title","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:40:38","updatedOn":"2023-03-28 09:40:38","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title","location":""},{"id":"WO8703419","title":"shipment title","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:40:33","updatedOn":"2023-03-28 09:40:33","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title","location":""},{"id":"WO8703418","title":"shipment title","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:40:27","updatedOn":"2023-03-28 09:40:27","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title","location":""},{"id":"WO8703417","title":"shipment title","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:40:14","updatedOn":"2023-03-28 09:40:14","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title","location":""},{"id":"WO8703416","title":"shipment title","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:40:08","updatedOn":"2023-03-28 09:40:08","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title","location":""},{"id":"WO8703415","title":"shipment title","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:39:56","updatedOn":"2023-03-28 09:39:56","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title","location":""},{"id":"WO8703414","title":"shipment title ","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:39:49","updatedOn":"2023-03-28 09:39:49","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title ","location":""},{"id":"WO8703413","title":"shipment title ","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:39:44","updatedOn":"2023-03-28 09:39:44","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title ","location":""},{"id":"WO8703412","title":"shipment title ","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:39:40","updatedOn":"2023-03-28 09:39:40","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title ","location":""},{"id":"WO8703411","title":"title sample   ","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:39:37","updatedOn":"2023-03-28 09:39:37","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"title sample   ","location":""},{"id":"WO8703410","title":"shipment title","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:39:20","updatedOn":"2023-03-28 09:39:30","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title","location":""},{"id":"WO8703409","title":"shipment title","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:39:04","updatedOn":"2023-03-28 09:39:12","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title","location":""},{"id":"WO8703408","title":"shipment title","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:38:48","updatedOn":"2023-03-28 09:38:56","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title","location":""},{"id":"WO8703407","title":"shipment title","status":"New","site":"PHX015","requestType":"","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:38:32","updatedOn":"2023-03-28 09:38:40","closedOn":"","createdBy":"Dates TestUser","ticketType":"Shipping and Receiving","description":"shipment title","location":""},{"id":"WO8703404","title":"Visitor","status":"New","site":"PHX015","requestType":"OSP Access","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:37:34","updatedOn":"2023-03-28 09:38:25","closedOn":"","createdBy":"dev146 tst146","ticketType":"Facility Access","description":"Visitor","location":"COLO 8 Starbucks Cage 8.06"},{"id":"WO8703405","title":"Visitor","status":"New","site":"PHX015","requestType":"OSP Access","category":"","isBulkRequest":false,"createdOn":"2023-03-28 09:37:34","updatedOn":"2023-03-28 09:38:25","closedOn":"","createdBy":"dev146 tst146","ticketType":"Facility Access","description":"Visitor","location":"COLO 8 Starbucks Cage 8.06"}],
+                "pageable": {   
+                    "last": false,
+                    "totalPages": 430,
+                    "totalElements": 10743,
+                    "size": 25,
+                    "number": 1,
+                    "numberOfElements": 25,
+                    "first": false,
+                    "empty": false
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:22:23 PM</td>
+				<td class='step-details'>
+						<details><summary><b><font color = red>Exception Occured, Click to see details:</font></b></summary>[org.testng.Assert.fail(Assert.java:99)<br> org.testng.Assert.failNotEquals(Assert.java:1037)<br> org.testng.Assert.assertTrue(Assert.java:45)<br> org.testng.Assert.assertTrue(Assert.java:55)<br> com.gapi.testCases.GetServiceTicketDetails.verifyGetAllWithServiceTicketFilters(GetServiceTicketDetails.java:121)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:568)<br> org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)<br> org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)<br> org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br> org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br> org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)<br> org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br> org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br> org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br> java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br> org.testng.TestRunner.privateRun(TestRunner.java:794)<br> org.testng.TestRunner.run(TestRunner.java:596)<br> org.testng.SuiteRunner.runTest(SuiteRunner.java:377)<br> org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)<br> org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)<br> org.testng.SuiteRunner.run(SuiteRunner.java:276)<br> org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br> org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)<br> org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)<br> org.testng.TestNG.runSuitesLocally(TestNG.java:1134)<br> org.testng.TestNG.runSuites(TestNG.java:1063)<br> org.testng.TestNG.run(TestNG.java:1031)<br> org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br> org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br> org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]</details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:22:23 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>java.lang.AssertionError: expected [true] but found [false]Test Failed</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:22:23 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>verifyGetAllWithServiceTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve all Tickets in In Progress Status</span>
+						<span class='test-time'>Mar 28, 2023 03:22:23 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 03:22:23 PM</span>
+	<span class='label end-time'>Mar 28, 2023 03:22:26 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+184ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='info'>
+				<td class='status info' title='info' alt='info'><i class='material-icons'>info_outline</i></td>
+				<td class='timestamp'>3:22:26 PM</td>
+				<td class='step-details'>
+						API -https://api-tst.digitalrealty.com/v1/service-tickets?status=In Progress
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:22:26 PM</td>
+				<td class='step-details'>
+						Response Status Code and Status Message is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:22:26 PM</td>
+				<td class='step-details'>
+						{
+                "content": [],
+                "pageable": {   
+                    "last": false,
+                    "totalPages": 4,
+                    "totalElements": 82,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 0,
+                    "first": true,
+                    "empty": true
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>3:22:26 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetAllWithServiceTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve all Tickets with  Request Type of Urgent Work and category KVM (keyboard, video, mouse) assistance(Ticket Type Remote Hands)</span>
+						<span class='test-time'>Mar 28, 2023 03:22:26 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 03:22:26 PM</span>
+	<span class='label end-time'>Mar 28, 2023 03:22:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+914ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:22:28 PM</td>
+				<td class='step-details'>
+						<details><summary><b><font color = red>Exception Occured, Click to see details:</font></b></summary>[org.testng.Assert.fail(Assert.java:99)<br> org.testng.Assert.failNotEquals(Assert.java:1037)<br> org.testng.Assert.assertEqualsImpl(Assert.java:140)<br> org.testng.Assert.assertEquals(Assert.java:122)<br> org.testng.Assert.assertEquals(Assert.java:629)<br> org.testng.Assert.assertEquals(Assert.java:639)<br> com.gapi.testCases.GetServiceTicketDetails.verifyGetAllWithServiceTicketFilters(GetServiceTicketDetails.java:67)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:568)<br> org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)<br> org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)<br> org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br> org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br> org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)<br> org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br> org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br> org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br> java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br> org.testng.TestRunner.privateRun(TestRunner.java:794)<br> org.testng.TestRunner.run(TestRunner.java:596)<br> org.testng.SuiteRunner.runTest(SuiteRunner.java:377)<br> org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)<br> org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)<br> org.testng.SuiteRunner.run(SuiteRunner.java:276)<br> org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br> org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)<br> org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)<br> org.testng.TestNG.runSuitesLocally(TestNG.java:1134)<br> org.testng.TestNG.runSuites(TestNG.java:1063)<br> org.testng.TestNG.run(TestNG.java:1031)<br> org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br> org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br> org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]</details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:22:28 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>java.lang.AssertionError: expected [200] but found [401]Test Failed</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>3:22:28 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>verifyGetAllWithServiceTicketFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>3</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Mar 28, 2023 03:22:16 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Mar 28, 2023 03:22:16 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 0s+0ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Environemnt</td>
+								<td>TEST</td>
+							</tr>
+							<tr>
+								<td>user</td>
+								<td>Ramu Kasi</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+				passParent: 1,
+				failParent: 2,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 2,
+				
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "Retrieve all Tickets - Verify Offset(page)":4.127,"Retrieve all Tickets in In Progress Status":3.184,"Retrieve all Tickets with  Request Type of Urgent Work and category KVM (keyboard, video, mouse) assistance(Ticket Type Remote Hands)":1.914
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/master/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+			
+            
+                $(document).ready(function() {
+                    
+                });
+            
+        
+		</script>
+	</body>
+</html>

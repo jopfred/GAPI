@@ -1,0 +1,1756 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset='UTF-8' /> 
+	<meta name='description' content='' />
+	<meta name='robots' content='noodp, noydir' />
+	<meta name='viewport' content='width=device-width, initial-scale=1' />
+	<meta id="timeStampFormat" name="timeStampFormat" content='MMM d, yyyy hh:mm:ss a'/>
+	
+	<link href='https://fonts.googleapis.com/css?family=Source+Sans+Pro:400,600' rel='stylesheet' type='text/css' />
+	<link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+	<link href='https://cdn.rawgit.com/extent-framework/extent-github-cdn/191775216e8ce53c38791eb07a1d2f31d0ae11b5/v3html/css/extent.css' type='text/css' rel='stylesheet' />
+	
+	<title>GAPI project</title>
+
+	<style type='text/css'>
+		/* json-tree */
+		.jstBracket,.jstComma,.jstValue{white-space:pre-wrap}.jstValue{font-size:10px;font-weight:400;font-family:"Lucida Console",Monaco,monospace}.jstProperty{color:#666;word-wrap:break-word}.jstBool{color:#2525CC}.jstNum{color:#D036D0}.jstNull{color:gray}.jstStr{color:#2DB669}.jstFold:after{content:' -';cursor:pointer}.jstExpand{white-space:normal}.jstExpand:after{content:' +';cursor:pointer}.jstFolded{white-space:normal!important}.jstHiddenBlock{display:none}
+			
+            
+                
+            
+        
+	</style>
+	
+	<script type="text/javascript">
+		/*! json-tree - v0.2.2 - 2017-09-25, MIT LICENSE */
+		var JSONTree=function(){var n={"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;","'":"&#x27;","/":"&#x2F;"},t=0,r=0;this.create=function(n,t){return r+=1,N(u(n,0,!1),{class:"jstValue"})};var e=function(t){return t.replace(/[&<>'"]/g,function(t){return n[t]})},s=function(){return r+"_"+t++},u=function(n,t,r){if(null===n)return f(r?t:0);switch(typeof n){case"boolean":return l(n,r?t:0);case"number":return i(n,r?t:0);case"string":return o(n,r?t:0);default:return n instanceof Array?a(n,t,r):c(n,t,r)}},c=function(n,t,r){var e=s(),u=Object.keys(n).map(function(r){return j(r,n[r],t+1,!0)}).join(m()),c=[g("{",r?t:0,e),N(u,{id:e}),p("}",t)].join("\n");return N(c,{})},a=function(n,t,r){var e=s(),c=n.map(function(n){return u(n,t+1,!0)}).join(m());return[g("[",r?t:0,e),N(c,{id:e}),p("]",t)].join("\n")},o=function(n,t){var r=e(JSON.stringify(n));return N(v(r,t),{class:"jstStr"})},i=function(n,t){return N(v(n,t),{class:"jstNum"})},l=function(n,t){return N(v(n,t),{class:"jstBool"})},f=function(n){return N(v("null",n),{class:"jstNull"})},j=function(n,t,r){var s=v(e(JSON.stringify(n))+": ",r),c=N(u(t,r,!1),{});return N(s+c,{class:"jstProperty"})},m=function(){return N(",\n",{class:"jstComma"})},N=function(n,t){return d("span",t,n)},d=function(n,t,r){return"<"+n+Object.keys(t).map(function(n){return" "+n+'="'+t[n]+'"'}).join("")+">"+r+"</"+n+">"},g=function(n,t,r){return N(v(n,t),{class:"jstBracket"})+N("",{class:"jstFold",onclick:"JSONTree.toggle('"+r+"')"})};this.toggle=function(n){var t=document.getElementById(n),r=t.parentNode,e=t.previousElementSibling;""===t.className?(t.className="jstHiddenBlock",r.className="jstFolded",e.className="jstExpand"):(t.className="",r.className="",e.className="jstFold")};var p=function(n,t){return N(v(n,t),{})},v=function(n,t){return Array(2*t+1).join(" ")+n};return this}();
+	</script>
+</head>
+	<body class='extent dark default hide-overflow '>
+		<div id='theme-selector' alt='Click to toggle theme. To enable by default, use theme configuration.' title='Click to toggle theme. To enable by default, use theme configuration.'>
+			<span><i class='material-icons'>desktop_windows</i></span>
+		</div>
+<nav>
+	<div class="nav-wrapper">
+		<a href="#!" class="brand-logo black"><img src="https://cdn.rawgit.com/extent-framework/extent-github-cdn/d74480e/commons/img/logo.png"></a>
+		<!-- slideout menu -->
+		<ul id='slide-out' class='side-nav fixed hide-on-med-and-down'>
+			<li class='waves-effect active'><a href='#!' view='test-view' onclick="configureView(0);chartsView('test');"><i class='material-icons'>dashboard</i></a></li>
+						<li class='waves-effect'><a href='#!' onclick="configureView(-1);chartsView('dashboard');" view='dashboard-view'><i class='material-icons'>track_changes</i></a></li>
+		</ul>
+		<!-- report name -->
+		<span class='report-name'>API Functional Test Automation Report</span>
+		<!-- report headline -->
+		<span class='report-headline'></span>
+		<!-- nav-right -->
+		<ul id='nav-mobile' class='right hide-on-med-and-down nav-right'>
+			<a href='#!'>
+			<span class='label blue darken-3 suite-start-time'>Mar 28, 2023 09:54:50 PM</span>
+			</a>
+		</ul>
+	</div>
+</nav>		<!-- container -->
+		<div class='container'>
+<div id='test-view' class='view'>
+	<section id='controls'>
+		<div class='controls grey lighten-4'>
+			<!-- test toggle -->
+			<div class='chip transparent'>
+				<a class='dropdown-button tests-toggle' data-activates='tests-toggle' data-constrainwidth='true' data-beloworigin='true' data-hover='true' href='#'>
+				<i class='material-icons'>warning</i> Status
+				</a>
+				<ul id='tests-toggle' class='dropdown-content'>
+										<li status='pass'><a href='#!'>Pass <i class='material-icons green-text'>check_circle</i></a></li>
+					<li status='fail'><a href='#!'>Fail <i class='material-icons red-text'>cancel</i></a></li>
+					<li class='divider'></li>
+					<li status='clear' clear='true'><a href='#!'>Clear Filters <i class='material-icons'>clear</i></a></li>
+				</ul>
+			</div>
+			<!-- test toggle -->
+			<!-- category toggle -->
+			<!-- category toggle -->
+			<!-- clear filters -->
+			<div class='chip transparent hide'>
+				<a class='' id='clear-filters' alt='Clear Filters' title='Clear Filters'>
+				<i class='material-icons'>close</i> Clear
+				</a>
+			</div>
+			<!-- clear filters -->
+			<!-- enable dashboard -->
+			<div id='toggle-test-view-charts' class='chip transparent'>
+				<a class='pink-text' id='enable-dashboard' alt='Enable Dashboard' title='Enable Dashboard'>
+				<i class='material-icons'>track_changes</i> Dashboard
+				</a>
+			</div>
+			<!-- enable dashboard -->
+			<!-- search -->
+			<div class='chip transparent' alt='Search Tests' title='Search Tests'>
+				<a href="#" class='search-div'>
+				<i class='material-icons'>search</i> Search
+				</a>
+				<div class='input-field left hide'>
+					<input id='search-tests' type='text' class='validate browser-default' placeholder='Search Tests...'>
+				</div>
+			</div>
+			<!-- search -->
+		</div>
+	</section>
+<div id='test-view-charts' class='subview-full'>
+	<div id='charts-row' class='row nm-v nm-h'>
+		<div class='col s12 m6 l6 np-h'>
+			<div class='card-panel nm-v'>
+				<div class='left panel-name'>Tests</div>
+				<div class='chart-box' style="max-height:94px;">
+					<canvas id='parent-analysis' width='100' height='80'></canvas>
+				</div>
+				<div class='block text-small'>
+					<span class='tooltipped' data-position='top' data-tooltip='72%'><span class='strong'>18</span> test(s) passed</span>
+				</div>
+				<div class='block text-small'>
+					<span class='strong tooltipped' data-position='top' data-tooltip='28%'>7</span> test(s) failed, <span class='strong tooltipped' data-position='top' data-tooltip='0%'>0</span> others
+				</div>
+			</div>
+		</div>
+	</div>
+	<div id="timeline-chart" class="row nm-v nm-h">
+		<div class="col s12 m12 l12 np-h">
+			<div class="card-panel">
+				<div class='left panel-name'>Timeline (seconds)</div>
+				<div class="chart-box" style="width:98%;max-height:145px;">
+					<canvas id="timeline" height="120"></canvas>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>	<div class='subview-left left'>
+		<div class='view-summary'>
+			<ul id='test-collection' class='test-collection'>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='1'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve the Cross Connect Details By Valid Billing Account Number</span>
+						<span class='test-time'>Mar 28, 2023 09:54:53 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:54:53 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:55:05 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 11s+504ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:54:57 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:54:57 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:05 PM</td>
+				<td class='step-details'>
+						Response details Matched with the given filter criteria
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:05 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='2'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve Cross Connet Requests by Iinterconnection Panel</span>
+						<span class='test-time'>Mar 28, 2023 09:55:05 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:55:05 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:55:18 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 13s+293ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:08 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY&interconnectionPanel=002.06.06.RU16
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:08 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:18 PM</td>
+				<td class='step-details'>
+						Response details Matched with the given filter criteria
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:18 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='3'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve Cross Connect Requests by Interconnection Port Status  -Available</span>
+						<span class='test-time'>Mar 28, 2023 09:55:18 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:55:18 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:55:30 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 11s+955ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:22 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY&interconnectionPortStatus=Available
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:22 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:30 PM</td>
+				<td class='step-details'>
+						Response details Matched with the given filter criteria
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:30 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='4'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve Cross Connet Requests by Interconnection PortStatus -In-Service</span>
+						<span class='test-time'>Mar 28, 2023 09:55:30 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:55:30 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:55:41 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 11s+297ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:33 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY&interconnectionPortStatus=In-Service
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:33 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:41 PM</td>
+				<td class='step-details'>
+						Response details Matched with the given filter criteria
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:41 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='5'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve Cross Connect Requests by Interconnection Port Status  -Pre-Wired</span>
+						<span class='test-time'>Mar 28, 2023 09:55:41 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:55:41 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:55:44 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+925ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:44 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY&interconnectionPortStatus=Pre-Wired
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:44 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:55:44 PM</td>
+				<td class='step-details'>
+						Response details were not Matched with the given filter criteria
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:44 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='6'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve all Cross-Connect Request - filter - Limit(Min 25 to Max 1000)</span>
+						<span class='test-time'>Mar 28, 2023 09:55:44 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:55:44 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:55:49 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 4s+210ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:49 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY&limit=25
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:49 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:49 PM</td>
+				<td class='step-details'>
+						Response details Matched with the given filter criteria
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:49 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='7'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve the Cross Connect details by exceeds the Max Limit value(Max limit=1000)</span>
+						<span class='test-time'>Mar 28, 2023 09:55:49 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:55:49 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:55:49 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+310ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:49 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY&limit=3000
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:49 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 400 Bad Request
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:55:49 PM</td>
+				<td class='step-details'>
+						<details><summary><b><font color = red>Exception Occured, Click to see details:</font></b></summary>[org.testng.Assert.fail(Assert.java:99)<br> org.testng.Assert.failNotEquals(Assert.java:1037)<br> org.testng.Assert.assertEqualsImpl(Assert.java:140)<br> org.testng.Assert.assertEquals(Assert.java:122)<br> org.testng.Assert.assertEquals(Assert.java:629)<br> org.testng.Assert.assertEquals(Assert.java:639)<br> com.gapi.testCases.GetCrossConnectDetails.verifyCrossConnectDetailsUsingDifferentFilters(GetCrossConnectDetails.java:56)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:568)<br> org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)<br> org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)<br> org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br> org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br> org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)<br> org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br> org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br> org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br> java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br> org.testng.TestRunner.privateRun(TestRunner.java:794)<br> org.testng.TestRunner.run(TestRunner.java:596)<br> org.testng.SuiteRunner.runTest(SuiteRunner.java:377)<br> org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)<br> org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)<br> org.testng.SuiteRunner.run(SuiteRunner.java:276)<br> org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br> org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)<br> org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)<br> org.testng.TestNG.runSuitesLocally(TestNG.java:1134)<br> org.testng.TestNG.runSuites(TestNG.java:1063)<br> org.testng.TestNG.run(TestNG.java:1031)<br> org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br> org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br> org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]</details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:55:49 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>java.lang.AssertionError: expected [200] but found [400]Test Failed</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:55:49 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='8'>
+					<div class='test-heading'>
+						<span class='test-name'>CC- Retrieve Cross-Connect Requests by Offset</span>
+						<span class='test-time'>Mar 28, 2023 09:55:49 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:55:49 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:55:53 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+681ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:53 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY&offset=1
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:53 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:53 PM</td>
+				<td class='step-details'>
+						Response details Matched with the given filter criteria
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:53 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='9'>
+					<div class='test-heading'>
+						<span class='test-name'>Retreive the cross connect details by NOT providing the offset&Limit values</span>
+						<span class='test-time'>Mar 28, 2023 09:55:53 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:55:53 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:00 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 7s+512ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:56 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:55:56 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:00 PM</td>
+				<td class='step-details'>
+						Response details Matched with the given filter criteria
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:00 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='10'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve the cross connect details by  providing the Limit values and Not specifying the offset value</span>
+						<span class='test-time'>Mar 28, 2023 09:56:00 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:00 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:03 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+103ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:03 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY&limit=10
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:03 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:03 PM</td>
+				<td class='step-details'>
+						Response details Matched with the given filter criteria
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:03 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='11'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrive the Cross connect data by providing Same Limit & Offset values</span>
+						<span class='test-time'>Mar 28, 2023 09:56:03 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:03 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:06 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+289ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:06 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY&limit=8&offset=8
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:06 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:06 PM</td>
+				<td class='step-details'>
+						Response details Matched with the given filter criteria
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:06 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='12'>
+					<div class='test-heading'>
+						<span class='test-name'>Retreive the cross connect details by providing the offset value greater than all available records</span>
+						<span class='test-time'>Mar 28, 2023 09:56:06 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:06 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:10 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 3s+124ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:10 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY&offset=300
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:10 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:10 PM</td>
+				<td class='step-details'>
+						Response details Matched with the given filter criteria
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:10 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='13'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve the Cross Connect Details by valid Limit & Offset values</span>
+						<span class='test-time'>Mar 28, 2023 09:56:10 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:10 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:17 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 7s+292ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:13 PM</td>
+				<td class='step-details'>
+						API URI :https://api-tst.digitalrealty.com/v2/cross-connect-inventory?accountId=0012E00002dzuIMQAY
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:13 PM</td>
+				<td class='step-details'>
+						Response :HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:17 PM</td>
+				<td class='step-details'>
+						Response details Matched with the given filter criteria
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:17 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyCrossConnectDetailsUsingDifferentFilters</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='14'>
+					<div class='test-heading'>
+						<span class='test-name'>verifyGetCrossConnectDetailsByInValidId</span>
+						<span class='test-time'>Mar 28, 2023 09:56:17 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:17 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:19 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+958ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:19 PM</td>
+				<td class='step-details'>
+						Response Status Code and Message Is HTTP/1.1 500 Internal Server Error
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:19 PM</td>
+				<td class='step-details'>
+						Error Response Message Is{
+    "error":{
+        "correlationId":"023221c9-2ab2-4416-9615-43e40c4bec1e",
+        "type":"server",
+        "message":"Oops. Something went wrong. The server encountered an internal error or misconfiguration and was unable to complete your request."
+    }
+}
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:19 PM</td>
+				<td class='step-details'>
+						Not Allowed to Retrieve Request Details With Invalid Id
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:19 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetCrossConnectDetailsByInValidId</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='15'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve the Cross connect details by Invalid Bearer Token</span>
+						<span class='test-time'>Mar 28, 2023 09:56:19 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:19 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:19 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+208ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:19 PM</td>
+				<td class='step-details'>
+						Response Status Code and Message Is HTTP/1.1 401 Unauthorized
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:19 PM</td>
+				<td class='step-details'>
+						Error Response Message Is{
+    "error":{
+        "correlationId":"ad010db5-4d41-4d95-acf6-e50bd84489eb",
+        "type":"client",
+        "message":"Unauthorized. Access token is missing or invalid."
+    }
+}
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:19 PM</td>
+				<td class='step-details'>
+						Not Allowed to Retrieve Request Details With In-valid  Interconnection PortStatus
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:19 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetCrossConnectDetailsByInvalidBearerToken</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='16'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve Cross Connect Requests by Invalid Blling Accounnt Number</span>
+						<span class='test-time'>Mar 28, 2023 09:56:19 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:19 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:21 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+303ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:21 PM</td>
+				<td class='step-details'>
+						Response Status Code and Message Is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:21 PM</td>
+				<td class='step-details'>
+						Error Response Message Is
+            {
+                "content": [],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 0,
+                    "totalElements": 0,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 0,
+                    "first": true,
+                    "empty": true
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:21 PM</td>
+				<td class='step-details'>
+						Not Allowed to Retrieve Request Details With Empty Billing Account Number
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:21 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetCrossConnectDetailsByInvalidBillingAccountNumber</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='17'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve Cross Connet Requests by In-valid  Interconnection PortStatus</span>
+						<span class='test-time'>Mar 28, 2023 09:56:21 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:21 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:22 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+267ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:22 PM</td>
+				<td class='step-details'>
+						Response Status Code and Message Is HTTP/1.1 400 Bad Request
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:22 PM</td>
+				<td class='step-details'>
+						Error Response Message Is{
+    "error":{
+        "correlationId":"69078a4c-3500-4885-8a85-344d1e745e7c",
+        "type":"client",
+        "message":"Query parameter interconnectionPortStatus can only have one of the following values: 'Pre-Wired', 'In-Service', 'Available'",
+        "code":"INTERCONNECTION_PORT_STATUS"
+    }
+}
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:22 PM</td>
+				<td class='step-details'>
+						Not Allowed to Retrieve Request Details With In-valid  Interconnection PortStatus
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:22 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetCrossConnectDetailsByInvalidInterconnectionPortStatus</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='18'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve the Cross connect details by Invalid Limit value(limit=0)</span>
+						<span class='test-time'>Mar 28, 2023 09:56:22 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:22 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:24 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+847ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:24 PM</td>
+				<td class='step-details'>
+						<details><summary><b><font color = red>Exception Occured, Click to see details:</font></b></summary>[org.testng.Assert.fail(Assert.java:99)<br> org.testng.Assert.failNotEquals(Assert.java:1037)<br> org.testng.Assert.assertEqualsImpl(Assert.java:140)<br> org.testng.Assert.assertEquals(Assert.java:122)<br> org.testng.Assert.assertEquals(Assert.java:907)<br> org.testng.Assert.assertEquals(Assert.java:917)<br> com.gapi.testCases.GetCrossConnectDetails.verifyGetCrossConnectDetailsByInvalidLimitValue(GetCrossConnectDetails.java:304)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:568)<br> org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)<br> org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)<br> org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br> org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br> org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)<br> org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br> org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br> org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br> java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br> org.testng.TestRunner.privateRun(TestRunner.java:794)<br> org.testng.TestRunner.run(TestRunner.java:596)<br> org.testng.SuiteRunner.runTest(SuiteRunner.java:377)<br> org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)<br> org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)<br> org.testng.SuiteRunner.run(SuiteRunner.java:276)<br> org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br> org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)<br> org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)<br> org.testng.TestNG.runSuitesLocally(TestNG.java:1134)<br> org.testng.TestNG.runSuites(TestNG.java:1063)<br> org.testng.TestNG.run(TestNG.java:1031)<br> org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br> org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br> org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]</details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:24 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>java.lang.AssertionError: expected [400] but found [500]Test Failed</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:24 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>verifyGetCrossConnectDetailsByInvalidLimitValue</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='19'>
+					<div class='test-heading'>
+						<span class='test-name'>verifyGetCrossConnectDetailsByValidId</span>
+						<span class='test-time'>Mar 28, 2023 09:56:24 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:24 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:26 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 1s+107ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:26 PM</td>
+				<td class='step-details'>
+						Response Status Code and Message Is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:26 PM</td>
+				<td class='step-details'>
+						Response Message Is{"id":"X17XY33OWFJKJ0","site":"ORD010","location":"240E","billingAccountNumber":"101-C14021","accountId":"0012E00002dmMYCQA2","customerCabinet":"VR.STE240","customerPanelName":"VR.STE240 JTL R01 RMU44 to 002.22.21.73","customerPortId":"68","interconnectionPanel":"002.22.21.73","interconnectionPortId":"68","interconnectionPortStatus":"In-Service","mediaType":"Fiber","serviceLevel":"Connectivity-Standard","connectedTo":"NULL","caseNumber":"584385","installDate":"2019-07-17 12:07:00","orderingParty":"Jump Systems, LLC","circuitId":"JTL / EQX / SMFRISER - CABLE ID 16943793 - 584385","carrierCircuitId":"NULL","zpanelId":"002.21.10.18","zportNo":"69"}
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:26 PM</td>
+				<td class='step-details'>
+						Allowed to Retrieve Request Details With valid Id
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:26 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetCrossConnectDetailsByValidId</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='20'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve the Cross Connect Details by valid Inter connection Port Status & Invalid inter connect Panel</span>
+						<span class='test-time'>Mar 28, 2023 09:56:26 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:26 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:28 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 2s+745ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:28 PM</td>
+				<td class='step-details'>
+						Response Status Code and Message Is HTTP/1.1 200 OK
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:28 PM</td>
+				<td class='step-details'>
+						Error Response Message Is
+            {
+                "content": [],
+                "pageable": {   
+                    "last": true,
+                    "totalPages": 0,
+                    "totalElements": 0,
+                    "size": 25,
+                    "number": 0,
+                    "numberOfElements": 0,
+                    "first": true,
+                    "empty": true
+                }
+
+            }
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:28 PM</td>
+				<td class='step-details'>
+						Not Allowed to Retrieve Request Details With valid Inter connection  Port Status & Invalid inter connect Panel
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:28 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetCrossConnectDetailsByValidInterconnectionPortStatusAndInvalidInterConnectPanel</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='21'>
+					<div class='test-heading'>
+						<span class='test-name'>Retreive the cross connect details by  providing the NEGATIVE Limit values</span>
+						<span class='test-time'>Mar 28, 2023 09:56:28 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:28 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:29 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+279ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:29 PM</td>
+				<td class='step-details'>
+						<details><summary><b><font color = red>Exception Occured, Click to see details:</font></b></summary>[org.testng.Assert.fail(Assert.java:99)<br> org.testng.Assert.failNotEquals(Assert.java:1037)<br> org.testng.Assert.assertEqualsImpl(Assert.java:140)<br> org.testng.Assert.assertEquals(Assert.java:122)<br> org.testng.Assert.assertEquals(Assert.java:629)<br> org.testng.Assert.assertEquals(Assert.java:639)<br> com.gapi.utilities.TestUtilities.verifyErrorResponseMessage(TestUtilities.java:556)<br> com.gapi.testCases.GetCrossConnectDetails.verifyGetCrossConnectDetailsWithNegativeLimitValues(GetCrossConnectDetails.java:386)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:568)<br> org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)<br> org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)<br> org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br> org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br> org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)<br> org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br> org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br> org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br> java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br> org.testng.TestRunner.privateRun(TestRunner.java:794)<br> org.testng.TestRunner.run(TestRunner.java:596)<br> org.testng.SuiteRunner.runTest(SuiteRunner.java:377)<br> org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)<br> org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)<br> org.testng.SuiteRunner.run(SuiteRunner.java:276)<br> org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br> org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)<br> org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)<br> org.testng.TestNG.runSuitesLocally(TestNG.java:1134)<br> org.testng.TestNG.runSuites(TestNG.java:1063)<br> org.testng.TestNG.run(TestNG.java:1031)<br> org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br> org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br> org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]</details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:29 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>java.lang.AssertionError: expected [Query parameter 'limit' has to be formatted as 'integer'.] but found [Request is invalid.]Test Failed</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:29 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>verifyGetCrossConnectDetailsWithNegativeLimitValues</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='22'>
+					<div class='test-heading'>
+						<span class='test-name'>Retreive the cross connect details by  providing the NEGATIVE Offset values</span>
+						<span class='test-time'>Mar 28, 2023 09:56:29 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:29 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:29 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+262ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:29 PM</td>
+				<td class='step-details'>
+						<details><summary><b><font color = red>Exception Occured, Click to see details:</font></b></summary>[org.testng.Assert.fail(Assert.java:99)<br> org.testng.Assert.failNotEquals(Assert.java:1037)<br> org.testng.Assert.assertEqualsImpl(Assert.java:140)<br> org.testng.Assert.assertEquals(Assert.java:122)<br> org.testng.Assert.assertEquals(Assert.java:629)<br> org.testng.Assert.assertEquals(Assert.java:639)<br> com.gapi.utilities.TestUtilities.verifyErrorResponseMessage(TestUtilities.java:556)<br> com.gapi.testCases.GetCrossConnectDetails.verifyGetCrossConnectDetailsWithNegativeOffset(GetCrossConnectDetails.java:326)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:568)<br> org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)<br> org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)<br> org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br> org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br> org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)<br> org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br> org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br> org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br> java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br> org.testng.TestRunner.privateRun(TestRunner.java:794)<br> org.testng.TestRunner.run(TestRunner.java:596)<br> org.testng.SuiteRunner.runTest(SuiteRunner.java:377)<br> org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)<br> org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)<br> org.testng.SuiteRunner.run(SuiteRunner.java:276)<br> org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br> org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)<br> org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)<br> org.testng.TestNG.runSuitesLocally(TestNG.java:1134)<br> org.testng.TestNG.runSuites(TestNG.java:1063)<br> org.testng.TestNG.run(TestNG.java:1031)<br> org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br> org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br> org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]</details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:29 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>java.lang.AssertionError: expected [Query parameter 'offset' can't be a negative number.] but found [Request is invalid.]Test Failed</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:29 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>verifyGetCrossConnectDetailsWithNegativeOffset</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='23'>
+					<div class='test-heading'>
+						<span class='test-name'>Retreive the cross connect details by  providing the Non-Interger Limit values</span>
+						<span class='test-time'>Mar 28, 2023 09:56:29 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:29 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:29 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+269ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:29 PM</td>
+				<td class='step-details'>
+						<details><summary><b><font color = red>Exception Occured, Click to see details:</font></b></summary>[org.testng.Assert.fail(Assert.java:99)<br> org.testng.Assert.failNotEquals(Assert.java:1037)<br> org.testng.Assert.assertEqualsImpl(Assert.java:140)<br> org.testng.Assert.assertEquals(Assert.java:122)<br> org.testng.Assert.assertEquals(Assert.java:629)<br> org.testng.Assert.assertEquals(Assert.java:639)<br> com.gapi.utilities.TestUtilities.verifyErrorResponseMessage(TestUtilities.java:556)<br> com.gapi.testCases.GetCrossConnectDetails.verifyGetCrossConnectDetailsWithNonIntegerLimitValues(GetCrossConnectDetails.java:366)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:568)<br> org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)<br> org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)<br> org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br> org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br> org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)<br> org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br> org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br> org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br> java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br> org.testng.TestRunner.privateRun(TestRunner.java:794)<br> org.testng.TestRunner.run(TestRunner.java:596)<br> org.testng.SuiteRunner.runTest(SuiteRunner.java:377)<br> org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)<br> org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)<br> org.testng.SuiteRunner.run(SuiteRunner.java:276)<br> org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br> org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)<br> org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)<br> org.testng.TestNG.runSuitesLocally(TestNG.java:1134)<br> org.testng.TestNG.runSuites(TestNG.java:1063)<br> org.testng.TestNG.run(TestNG.java:1031)<br> org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br> org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br> org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]</details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:29 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>java.lang.AssertionError: expected [Query parameter 'limit' has to be formatted as 'integer'.] but found [Bad request was submitted.]Test Failed</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:29 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>verifyGetCrossConnectDetailsWithNonIntegerLimitValues</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  fail' status='fail' bdd='false' test-id='24'>
+					<div class='test-heading'>
+						<span class='test-name'>Retreive the cross connect details by  providing the Non-Interger Offset values</span>
+						<span class='test-time'>Mar 28, 2023 09:56:29 PM</span>
+						<span class='test-status right fail'>fail</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:29 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:29 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+267ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:29 PM</td>
+				<td class='step-details'>
+						<details><summary><b><font color = red>Exception Occured, Click to see details:</font></b></summary>[org.testng.Assert.fail(Assert.java:99)<br> org.testng.Assert.failNotEquals(Assert.java:1037)<br> org.testng.Assert.assertEqualsImpl(Assert.java:140)<br> org.testng.Assert.assertEquals(Assert.java:122)<br> org.testng.Assert.assertEquals(Assert.java:629)<br> org.testng.Assert.assertEquals(Assert.java:639)<br> com.gapi.utilities.TestUtilities.verifyErrorResponseMessage(TestUtilities.java:556)<br> com.gapi.testCases.GetCrossConnectDetails.verifyGetCrossConnectDetailsWithNonIntergerOffset(GetCrossConnectDetails.java:346)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke0(Native Method)<br> java.base/jdk.internal.reflect.NativeMethodAccessorImpl.invoke(NativeMethodAccessorImpl.java:77)<br> java.base/jdk.internal.reflect.DelegatingMethodAccessorImpl.invoke(DelegatingMethodAccessorImpl.java:43)<br> java.base/java.lang.reflect.Method.invoke(Method.java:568)<br> org.testng.internal.MethodInvocationHelper.invokeMethod(MethodInvocationHelper.java:133)<br> org.testng.internal.TestInvoker.invokeMethod(TestInvoker.java:598)<br> org.testng.internal.TestInvoker.invokeTestMethod(TestInvoker.java:173)<br> org.testng.internal.MethodRunner.runInSequence(MethodRunner.java:46)<br> org.testng.internal.TestInvoker$MethodInvocationAgent.invoke(TestInvoker.java:824)<br> org.testng.internal.TestInvoker.invokeTestMethods(TestInvoker.java:146)<br> org.testng.internal.TestMethodWorker.invokeTestMethods(TestMethodWorker.java:146)<br> org.testng.internal.TestMethodWorker.run(TestMethodWorker.java:128)<br> java.base/java.util.ArrayList.forEach(ArrayList.java:1511)<br> org.testng.TestRunner.privateRun(TestRunner.java:794)<br> org.testng.TestRunner.run(TestRunner.java:596)<br> org.testng.SuiteRunner.runTest(SuiteRunner.java:377)<br> org.testng.SuiteRunner.runSequentially(SuiteRunner.java:371)<br> org.testng.SuiteRunner.privateRun(SuiteRunner.java:332)<br> org.testng.SuiteRunner.run(SuiteRunner.java:276)<br> org.testng.SuiteRunnerWorker.runSuite(SuiteRunnerWorker.java:53)<br> org.testng.SuiteRunnerWorker.run(SuiteRunnerWorker.java:96)<br> org.testng.TestNG.runSuitesSequentially(TestNG.java:1212)<br> org.testng.TestNG.runSuitesLocally(TestNG.java:1134)<br> org.testng.TestNG.runSuites(TestNG.java:1063)<br> org.testng.TestNG.run(TestNG.java:1031)<br> org.testng.remote.AbstractRemoteTestNG.run(AbstractRemoteTestNG.java:115)<br> org.testng.remote.RemoteTestNG.initAndRun(RemoteTestNG.java:251)<br> org.testng.remote.RemoteTestNG.main(RemoteTestNG.java:77)]</details>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:29 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>java.lang.AssertionError: expected [Query parameter 'offset' has to be formatted as 'integer'.] but found [Bad request was submitted.]Test Failed</span>
+					
+				</td>
+			</tr>
+			<tr class='log' status='fail'>
+				<td class='status fail' title='fail' alt='fail'><i class='material-icons'>cancel</i></td>
+				<td class='timestamp'>9:56:29 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text red'>verifyGetCrossConnectDetailsWithNonIntergerOffset</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+				<li class='test displayed active  pass' status='pass' bdd='false' test-id='25'>
+					<div class='test-heading'>
+						<span class='test-name'>Retrieve Cross Connect Inventory details by Invalid ID using In-Valid Bearer Token</span>
+						<span class='test-time'>Mar 28, 2023 09:56:29 PM</span>
+						<span class='test-status right pass'>pass</span>
+					</div>
+					<div class='test-content hide'>
+<div class='test-time-info'>
+	<span class='label start-time'>Mar 28, 2023 09:56:29 PM</span>
+	<span class='label end-time'>Mar 28, 2023 09:56:30 PM</span>
+	<span class='label time-taken grey lighten-1 white-text'>0h 0m 0s+215ms</span>
+</div>
+<div class='test-steps'>
+	<table class='bordered table-results'>
+		<thead>
+			<tr>
+				<th>Status</th>
+				<th>Timestamp</th>
+				<th>Details</th>
+			</tr>
+		</thead>
+		<tbody>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:30 PM</td>
+				<td class='step-details'>
+						Response Status Code and Message Is HTTP/1.1 401 Unauthorized
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:30 PM</td>
+				<td class='step-details'>
+						Error Response Message Is{
+    "error":{
+        "correlationId":"e956129f-ea09-4b8d-9f56-8651e28adff8",
+        "type":"client",
+        "message":"Unauthorized. Access token is missing or invalid."
+    }
+}
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:30 PM</td>
+				<td class='step-details'>
+						Not Allowed to Retrieve Request Details With In-valid bearer token
+					
+				</td>
+			</tr>
+			<tr class='log' status='pass'>
+				<td class='status pass' title='pass' alt='pass'><i class='material-icons'>check_circle</i></td>
+				<td class='timestamp'>9:56:30 PM</td>
+				<td class='step-details'>
+						<span class='badge white-text green'>verifyGetCrossConnectDetailsusingIDByInvalidBearerToken</span>
+					
+				</td>
+			</tr>
+		</tbody>
+	</table>
+</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+	</div>
+	<!-- subview left -->
+	<div class='subview-right left'>
+		<div class='view-summary'>
+			<h5 class='test-name'></h5>
+			<div id='step-filters' class="right">
+				<span class="blue-text" status="info" alt="info" title="info"><i class="material-icons">info_outline</i></span>
+				<span class="green-text" status="pass" alt="pass" title="pass"><i class="material-icons">check_circle</i></span>
+				<span class="red-text" status="fail" alt="fail" title="fail"><i class="material-icons">cancel</i></span>
+				<span class="red-text text-darken-4" status="fatal" alt="fatal" title="fatal"><i class="material-icons">cancel</i></span>
+				<span class="pink-text text-lighten-1" status="error" alt="error" title="error"><i class="material-icons">error</i></span>
+				<span class="orange-text" alt="warning" status="warning" title="warning"><i class="material-icons">warning</i></span>
+				<span class="teal-text" status="skip" alt="skip" title="skip"><i class="material-icons">redo</i></span>
+				<span status="clear" alt="Clear filters" title="Clear filters"><i class="material-icons">clear</i></span>
+			</div>
+		</div>
+	</div>
+	<!-- subview right -->
+</div>
+<!-- test view --><!-- category view --><!-- exception view --><div id='dashboard-view' class='view hide'>
+	<div class='card-panel transparent np-v'>
+		<h5>Dashboard</h5>
+
+		<div class='row'>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Tests
+					<div class='panel-lead'>25</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Steps
+					<div class='panel-lead'>0</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Start
+					<div class='panel-lead'>Mar 28, 2023 09:54:50 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+			 		End
+			 		<div class='panel-lead'>Mar 28, 2023 09:54:50 PM</div>
+				</div>
+			</div>
+			<div class='col s2'>
+				<div class='card-panel r'>
+					Time Taken
+					<div class='panel-lead'>0h 0m 0s+0ms</div>
+				</div>
+			</div>
+			<div class='col s4'>
+				<div class='card-panel dashboard-environment'>
+					<span class='right label cyan white-text'>Environment</span><p>&nbsp;</p>
+					
+					<table>
+						<tr>
+							<th>Name</th>
+							<th>Value</th>
+						</tr>
+							<tr>
+								<td>Environemnt</td>
+								<td>TEST</td>
+							</tr>
+							<tr>
+								<td>user</td>
+								<td>Ramu Kasi</td>
+							</tr>
+					</table>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+<!-- dashboard view -->
+<!-- testrunner-logs view -->		</div>
+		<!-- container -->
+		<script>
+			var statusGroup = {
+				passParent: 18,
+				failParent: 7,
+				fatalParent: 0,
+				errorParent: 0,
+				warningParent: 0,
+				skipParent: 0,
+				exceptionsParent: 7,
+				
+				passChild: 0,
+				failChild: 0,
+				fatalChild: 0,
+				errorChild: 0,
+				warningChild: 0,
+				skipChild: 0,
+				infoChild: 0,
+				debugChild: 0,
+				exceptionsChild: 0,
+				
+				passGrandChild: 0,
+				failGrandChild: 0,
+				fatalGrandChild: 0,
+				errorGrandChild: 0,
+				warningGrandChild: 0,
+				skipGrandChild: 0,
+				infoGrandChild: 0,
+				debugGrandChild: 0,
+				exceptionsGrandChild: 0,
+			};
+		</script>
+		<script>
+			var timeline = {
+			        "Retrieve the Cross Connect Details By Valid Billing Account Number":11.504,"Retrieve Cross Connet Requests by Iinterconnection Panel":13.293,"Retrieve Cross Connect Requests by Interconnection Port Status  -Available":11.955,"Retrieve Cross Connet Requests by Interconnection PortStatus -In-Service":11.297,"Retrieve Cross Connect Requests by Interconnection Port Status  -Pre-Wired":2.925,"Retrieve all Cross-Connect Request - filter - Limit(Min 25 to Max 1000)":4.21,"Retrieve the Cross Connect details by exceeds the Max Limit value(Max limit=1000)":0.31,"CC- Retrieve Cross-Connect Requests by Offset":3.681,"Retreive the cross connect details by NOT providing the offset&Limit values":7.512,"Retrieve the cross connect details by  providing the Limit values and Not specifying the offset value":3.103,"Retrive the Cross connect data by providing Same Limit & Offset values":3.289,"Retreive the cross connect details by providing the offset value greater than all available records":3.124,"Retrieve the Cross Connect Details by valid Limit & Offset values":7.292,"verifyGetCrossConnectDetailsByInValidId":1.958,"Retrieve the Cross connect details by Invalid Bearer Token":0.208,"Retrieve Cross Connect Requests by Invalid Blling Accounnt Number":2.303,"Retrieve Cross Connet Requests by In-valid  Interconnection PortStatus":0.267,"Retrieve the Cross connect details by Invalid Limit value(limit=0)":2.847,"verifyGetCrossConnectDetailsByValidId":1.107,"Retrieve the Cross Connect Details by valid Inter connection Port Status & Invalid inter connect Panel":2.745,"Retreive the cross connect details by  providing the NEGATIVE Limit values":0.279,"Retreive the cross connect details by  providing the NEGATIVE Offset values":0.262,"Retreive the cross connect details by  providing the Non-Interger Limit values":0.269,"Retreive the cross connect details by  providing the Non-Interger Offset values":0.267,"Retrieve Cross Connect Inventory details by Invalid ID using In-Valid Bearer Token":0.215
+			};
+		</script>
+		<script src='https://cdn.rawgit.com/extent-framework/extent-github-cdn/master/v3html/js/extent.js' type='text/javascript'></script>
+		<script type='text/javascript'>
+			
+            
+                $(document).ready(function() {
+                    
+                });
+            
+        
+		</script>
+	</body>
+</html>
